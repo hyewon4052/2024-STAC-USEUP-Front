@@ -19,7 +19,7 @@ const categoryImages = {
 
 const posts = {
     신상품: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
+      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'NCBag' },
       { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
       { id: '3', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
       { id: '4', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
@@ -120,7 +120,7 @@ const StoreScreen = () => {
                                         />
                                 </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={() => navigation.navigate('NCBag')}>
+                                    <TouchableOpacity onPress={() => navigation.navigate(item.page)}>
                                         <Image style={styles.goodsImage} source={item.image} />
                                         <Text style={styles.goodsText}>{item.title}</Text>
                                         <Text style={styles.goodsText}>{item.name}</Text>
