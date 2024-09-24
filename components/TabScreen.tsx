@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Dimensions, View, ScrollView } from 'react-native';
+import { Dimensions, View, ScrollView, StyleSheet } from 'react-native';
 import Tab from './Tab';
 
 interface Props {
@@ -30,16 +30,10 @@ const TabScreen = ({ menus, initTabIndex = 0, contents }: Props) => {
             />
             <ScrollView
                 horizontal
-                pagingEnabled
+                scrollEnabled={false}   //옆으로 슬라이드 금지
                 ref={scrollViewRef}
                 scrollEventThrottle={16}
                 showsHorizontalScrollIndicator={false}
-                onMomentumScrollEnd={(e) => {
-                    const newIndex = Math.floor(
-                        Math.max(0, e.nativeEvent.contentOffset.x) / windowWidth
-                    );
-                    setSelectedIndex(newIndex);
-                }}
             >
                 {contents.map((content, index) => (
                     <View
@@ -48,7 +42,7 @@ const TabScreen = ({ menus, initTabIndex = 0, contents }: Props) => {
                             width: windowWidth,
                         }}
                     >
-                    {content}
+                        {content}
                     </View>
                 ))}
             </ScrollView>

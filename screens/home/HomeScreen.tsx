@@ -25,8 +25,10 @@ const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
+
                 <HeaderLogo
                     source={require('../../assets/home/bell.png')}
+                    page='none'
                 />
 
                 <Text style={styles.greeting}>안녕하세요. 하영님!</Text>
@@ -63,6 +65,7 @@ const HomeScreen = () => {
                         <Image source={require('../../assets/home/guide.png')} style={styles.guideImage}/>
                     </TouchableOpacity>
                 </View>
+
             </ScrollView>
         </View>
     );
@@ -119,8 +122,9 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     guideImage: {
-        width: '100%',
-        marginTop: '3%',
+        width: 350,
+        height: 210,
+        marginVertical: '3%',
     },
 });
 

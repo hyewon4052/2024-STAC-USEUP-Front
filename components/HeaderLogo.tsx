@@ -16,7 +16,7 @@ const HeaderLogo = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image source={require('../assets/Logo.png')} style={styles.Logo}/>
-                <TouchableOpacity style={styles.bellButton}>
+                <TouchableOpacity style={styles.bellButton} onPress={() => navigation.navigate(props.page)}>
                     <Image source={props.source} style={styles.bellIcon}/>
                 </TouchableOpacity>
             </View>

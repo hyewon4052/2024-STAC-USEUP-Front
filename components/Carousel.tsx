@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 const { width } = Dimensions.get('window');
 
 const carouselItems = [
-    { id: '1', image: require('../assets/home/reform.png'), page: 'ReformScreen' },
-    { id: '2', image: require('../assets/home/new-clothes.png') },
+    { id: '1', image: require('../assets/home/reform.png'), page: 'Reform' },
+    { id: '2', image: require('../assets/home/new-clothes.png'), page: 'Store' },
 ];
 
 const Carousel = () => {
@@ -41,7 +41,7 @@ const Carousel = () => {
                 resizeMode="cover"
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => (
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate(item.page)}>
                         <Image source={item.image} style={styles.carouselImage} />
                     </TouchableOpacity>
                 )}
