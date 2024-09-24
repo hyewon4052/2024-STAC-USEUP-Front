@@ -9,12 +9,12 @@ const GuideScreen = () => {
             <ScrollView>
                 <Image style={styles.background} source={require('../../assets/more/guide-back.png')}/>
                 <View style={styles.header}>
-                    <View>
+                    <View style={styles.titles}>
                         <Image style={styles.content} source={require('../../assets/more/good.png')}/>
-                        <Text style={styles.content}>이용 가이드</Text>
+                        <Text style={styles.contentText}>이용 가이드</Text>
                         <Text style={styles.title}>헌옷 수거하고{"\n"}새옷 받기!</Text>
                     </View>
-                    <Image source={require('../../assets/more/hand.png')}/>
+                    <Image source={require('../../assets/more/hand.png')} style={styles.hand}/>
                 </View>
                 <View>
                     <Image style={styles.step} source={require('../../assets/more/step1.png')}/>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     background: {
         width: '100%',
-        height: '25%',
+        height: 240,
         margin: 0,
         padding: 0,
     },
@@ -100,6 +100,10 @@ const styles = StyleSheet.create({
         marginLeft: '4%',
         marginTop: '9%',
     },
+    titles: {
+        marginLeft: 10,
+        marginTop: 8,
+    },
     title: {
         fontSize: 26,
         fontWeight: 'bold',
@@ -107,14 +111,24 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     content: {
+        width: 60,
+        height: 27,
+    },
+    contentText: {
         fontSize: 18,
         color: '#333',
-        marginVertical: 3,
+        marginVertical: 2,
         color: 'white',
+    },
+    hand: {
+        width: 200,
+        height: 150,
     },
     step: {
         alignSelf: 'center',
         marginTop: '10%',
+        width: 74,
+        height: 30,
     },
     guide: {
         borderRadius: 15,
