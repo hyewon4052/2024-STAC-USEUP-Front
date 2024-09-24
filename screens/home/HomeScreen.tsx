@@ -3,15 +3,20 @@ import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, Toucha
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import HeaderLogo from '../../components/HeaderLogo'
+import Carousel from '../../components/Carousel'
+import Issue from '../../components/Issue'
 
 const { width } = Dimensions.get('window');
+const Tab = createBottomTabNavigator();
 
 const issueItems = [
-    { id: '1', issueComponent: IssueTrash, page: 'issueBlue' },
-    { id: '2', issueComponent: IssueClothes, page: 'issueRed' },
-    { id: '3', issueComponent: IssueConsumption, page: 'issueYellow' },
+    { id: '1', image: require('../../assets/home/trash.png'), page: 'IssueBlue' },
+    { id: '2', image: require('../../assets/home/clothes.png'), page: 'IssueRed' },
+    { id: '3', image: require('../../assets/home/consumption.png'), page: 'IssueYellow' },
 ]
 
 const HomeScreen = () => {
@@ -20,12 +25,9 @@ const HomeScreen = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <View style={styles.header}>
-                    <Image source={require('../../assets/Logo.png')}/>
-                    <TouchableOpacity style={styles.bellButton}>
-                        <Image source={require('../../assets/home/bell.png')} style={styles.bellIcon}/>
-                    </TouchableOpacity>
-                </View>
+                <HeaderLogo
+                    source={require('../../assets/home/bell.png')}
+                />
 
                 <Text style={styles.greeting}>안녕하세요. 하영님!</Text>
 
@@ -45,7 +47,9 @@ const HomeScreen = () => {
                             renderItem={({ item }) => (
                                 <TouchableOpacity onPress={() => navigation.navigate(item.page)}>
                                     <View style={styles.issueImage}>
-                                        <item.issueComponent />
+                                        <Issue
+                                            source={item.image}
+                                        />
                                     </View>
                                 </TouchableOpacity>
                             )}
@@ -64,17 +68,6 @@ const HomeScreen = () => {
     );
 };
 
-function TabNavigator() {
-    return (
-        <Tab.Navigator>
-            <Tab.Screen name="홈" component={HomeScreen} options={{headerShown:false}} />
-            <Tab.Screen name="수거" component={Collect} options={{headerShown:false}}/>
-            <Tab.Screen name="스토어" component={ShopScreen} options={{headerShown:false}}/>
-            <Tab.Screen name="마이페이지" component={MyPageScreen} options={{headerShown:false}}/>
-        </Tab.Navigator>
-    );
-}
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -85,13 +78,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginHorizontal: '8%',
         marginVertical: '5%',
-    },
-    bellButton: {
-        marginLeft: 'auto',
-    },
-    bellIcon: {
-        width: 24,
-        height: 24,
     },
     greeting: {
         fontSize: 23,
@@ -135,30 +121,6 @@ const styles = StyleSheet.create({
     guideImage: {
         width: '100%',
         marginTop: '3%',
-    },
-    footer: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        padding: 10,
-        borderTopWidth: 1,
-        borderTopColor: '#dddddd',
-        backgroundColor: 'white'
-    },
-    footerButton: {
-        alignItems: 'center',
-    },
-    footerIcon: {
-        alignItems: 'center',
-        flex: 1,
-        width: 25,
-    },
-    footerText: {
-        fontSize: 12,
-        color: '#000',
     },
 });
 
