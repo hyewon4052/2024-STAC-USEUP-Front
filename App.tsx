@@ -5,7 +5,15 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/home/HomeScreen';
-import StoreScreen from './screens/home/StoreScreen';
+import StoreScreen from './screens/store/StoreScreen';
+import HomeMoreScreen from './screens/home/HomeMoreScreen';
+import IssueBlueScreen from './screens/more/IssueBlueScreen';
+import IssueRedScreen from './screens/more/IssueRedScreen';
+import IssueYellowScreen from './screens/more/IssueYellowScreen';
+import ReformScreen from './screens/more/ReformScreen';
+import GuideScreen from './screens/more/GuideScreen';
+import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+import BasketScreen from './screens/store/BasketScreen';
 import { RootStackParamList } from './types';
 
 const Stack = createStackNavigator();
@@ -21,9 +29,79 @@ export default function App() {
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
+                    name="HomeMore"
+                    component={HomeMoreScreen}
+                    options={{
+                        headerTitle: () => <HeaderTitle/>,
+                        headerTitleAlign: 'center',
+                    }}
+                />
+                <Stack.Screen
+                    name="IssueBlue"
+                    component={IssueBlueScreen}
+                    options={{
+                        headerTitle: () => <HeaderTitle/>,
+                        headerTitleAlign: 'center',
+                    }}
+                />
+                <Stack.Screen
+                    name="IssueRed"
+                    component={IssueRedScreen}
+                    options={{
+                        headerTitle: () => <HeaderTitle/>,
+                        headerTitleAlign: 'center',
+                    }}
+                />
+                <Stack.Screen
+                    name="IssueYellow"
+                    component={IssueYellowScreen}
+                    options={{
+                        headerTitle: () => <HeaderTitle/>,
+                        headerTitleAlign: 'center',
+                    }}
+                />
+                <Stack.Screen
+                    name="Reform"
+                    component={ReformScreen}
+                    options={{
+                        headerTitle: () => <HeaderTitle/>,
+                        headerTitleAlign: 'center',
+                    }}
+                />
+                <Stack.Screen
                     name="Store"
                     component={StoreScreen}
                     options={{ headerShown: false }}
+                />
+                <Stack.Screen
+                    name="Basket"
+                    component={BasketScreen}
+                    options={{
+                        headerTitle: '장바구니',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
+                    }}
+                />
+                <Stack.Screen
+                    name="NCBag"
+                    component={NCdinosbagScreen}
+                    options={{
+                        headerTitle: '',
+                        headerStyle: {
+                          backgroundColor: 'transparent',
+                        },
+                        headerTransparent: true,
+                        headerLeft: undefined,
+                      }}
+                />
+                <Stack.Screen
+                    name="Guide"
+                    component={GuideScreen}
+                    options={{
+                        headerTitle: '유즈업 이용 가이드',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
+                    }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
@@ -40,3 +118,14 @@ function TabNavigator() {
         </Tab.Navigator>
   );
 }
+
+const HeaderTitle = () => (
+    <Text style={styles.title}>환경 이슈</Text>
+);
+const styles = StyleSheet.create({
+    title: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'black',
+    },
+});
