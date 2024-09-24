@@ -4,6 +4,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 import { WithLocalpng } from 'react-native-png';
+import BlueButton from '../../components/BlueButton'
 
 const { width } = Dimensions.get('window');
 
@@ -58,6 +59,9 @@ const BasketScreen = () => {
                     </View>
                 </View>
             </View>
+            <BlueButton
+                name='구매 하기'
+            />
         </View>
     );
 };
@@ -89,10 +93,10 @@ const styles = StyleSheet.create({
         marginTop: 13,
         right: 13,
         zIndex: 2,
-        width: 25,
     },
     heartImage: {
-        width: 25,
+        width: 24,
+        height: 24,
     },
     goodsText: {
         marginTop: 4,

@@ -1,5 +1,10 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../types';
+import { useNavigation } from '@react-navigation/native';
+
+const { width } = Dimensions.get('window');
 
 const IssueBlueScreen = () => {
     return (
@@ -12,7 +17,7 @@ const IssueBlueScreen = () => {
                         <Text style={styles.content}>국내 의류 폐기물</Text>
                         <Text style={styles.title}>한국은 옷 쓰레기 수출 '세계 5위'</Text>
                         <TouchableOpacity>
-                            <Image source={require('../../assets/more/news.png')}/>
+                            <Image source={require('../../assets/more/news.png')} style={styles.news}/>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -30,40 +35,49 @@ const IssueBlueScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
-    background: {
-        width: '100%',
-        margin: 0,
-        padding: 0,
-    },
-    header: {
-        position: 'absolute',
-        padding: '4%',
-        width: '100%',
-        marginLeft: '4%',
-        marginTop: '7%',
-    },
-    title: {
-        fontSize: 23,
-        fontWeight: 'bold',
-        marginBottom: 10,
-        color: '#000',
-    },
-    content: {
-        fontSize: 14,
-        marginVertical: 3,
-    },
-    textContainer: {
-        padding: '8%',
-        marginTop: '8%',
-    },
-    text: {
-        paddingVertical: '3%',
-        flexDirection: 'row',
-        marginVertical: 5,
-    },
+            flex: 1,
+            backgroundColor: '#fff',
+        },
+        background: {
+            width: width,
+            margin: 0,
+            padding: 0,
+            height: 87,
+        },
+        item: {
+            width: 78,
+            height: 78,
+        },
+        news: {
+            width: 72,
+            height: 24,
+        },
+        header: {
+            position: 'absolute',
+            padding: '4%',
+            width: '100%',
+            marginLeft: '4%',
+            marginTop: '7%',
+        },
+        title: {
+            fontSize: 23,
+            fontWeight: 'bold',
+            marginBottom: 10,
+            color: '#000',
+        },
+        content: {
+            fontSize: 14,
+            marginVertical: 3,
+        },
+        textContainer: {
+            padding: '8%',
+            marginTop: '25%',
+        },
+        text: {
+            paddingVertical: '3%',
+            flexDirection: 'row',
+            marginVertical: 5,
+        },
 });
 
 export default IssueBlueScreen;

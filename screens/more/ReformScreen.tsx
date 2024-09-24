@@ -1,16 +1,74 @@
-import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, TextInput, Posts } from 'react-native';
+import React from 'react';
+import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
-
-const IssueBlueScreen = () => {
+const GuideScreen = () => {
     return (
         <View style={styles.container}>
-              <Text style={styles.title}>한국은 옷 쓰레기 수출 '세계 5위'</Text>
-              <Text style={styles.content}>우리나라는 매년 30만 톤 이상의 중고 의류를 수출하는 전 세계 5위 수출대국이다. 지난해 기준 인도와 말레이시아에 각각 약 7만 톤을 수출했고, 그 외 필리핀 태국 파키스탄 등 아시아 국가에 주로 수출하고 있다. 아프리카 대륙 나이지리아로 보내는 양도 2만 톤가량 된다. 외화 획득에 기여한다는 긍정적인 시각도 있지만 이런 식의 지구적 떠넘기기를 자랑스러워해야 하는 것인지 모르겠다.
-              {"\n"}{"\n"}재사용된다고 해서 모든 소비가 좋은 것은 아니다. 우리가 봐야 할 숫자는 소비총량이다. 재사용이 물질 소비와 쓰레기 발생량의 총량을 줄이지 못한다면 재사용과 재활용의 의미는 매우 제한적이다. 버려진 옷들은 저소득 국가에서 재사용되겠지만 곧바로 쓰레기로 나올 테니 결국 전 세계적으로 의류 소비량과 쓰레기 발생량은 계속 증가하고 있다.
-              {"\n"}출처: 홍수열 자원순환사회경제연구소장</Text>
+            <ScrollView>
+                <Image style={styles.background} source={require('../../assets/more/reform-m.png')}/>
+                <View>
+                    <Image style={styles.step} source={require('../../assets/more/step1.png')}/>
+                    <View style={styles.guide}>
+                        <View style={styles.guideWhite}>
+                            <Text style={styles.guideWhiteText}>수거 신청 하기</Text>
+                        </View>
+                        <View style={styles.textContainer}>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>1</Text>
+                                <Text>앱 하단 수거 탭에서 수거 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>2</Text>
+                                <Text>수거 신청 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>3</Text>
+                                <Text>수거 위치, 상세주소, 수거 키트 수 입력 및 선택!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>4</Text>
+                                <Text>수거 신청 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>5</Text>
+                                <Text>앱 하단 수거 탭의 진행 중인 수거에서 수거 예정일을 확인할 수 있어요!</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View>
+                    <Image style={styles.step} source={require('../../assets/more/step2.png')}/>
+                    <View style={styles.guide}>
+                        <View style={styles.guideBlue}>
+                            <Text style={styles.guideBlueText}>옷 구매 하기</Text>
+                        </View>
+                        <View style={styles.textContainer}>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>1</Text>
+                                <Text>앱 하단 수거 탭에서 수거 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>2</Text>
+                                <Text>수거 신청 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>3</Text>
+                                <Text>수거 위치, 상세주소, 수거 키트 수 입력 및 선택!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>4</Text>
+                                <Text>수거 신청 클릭!</Text>
+                            </View>
+                            <View style={styles.texts}>
+                                <Text style={styles.number}>5</Text>
+                                <Text>앱 하단 수거 탭의 진행 중인 수거에서 수거 예정일을 확인할 수 있어요!</Text>
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
         </View>
     );
 };
@@ -18,18 +76,101 @@ const IssueBlueScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
         backgroundColor: '#fff',
     },
+    background: {
+        width: '100%',
+        height: 240,
+        margin: 0,
+        padding: 0,
+    },
+    header: {
+        position: 'absolute',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginLeft: '4%',
+        marginTop: '9%',
+    },
+    titles: {
+        marginLeft: 10,
+        marginTop: 8,
+    },
     title: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: 'bold',
         marginBottom: 10,
+        color: 'white',
     },
     content: {
-        fontSize: 16,
+        width: 60,
+        height: 27,
+    },
+    contentText: {
+        fontSize: 18,
         color: '#333',
+        marginVertical: 2,
+        color: 'white',
+    },
+    hand: {
+        width: 200,
+        height: 150,
+    },
+    step: {
+        alignSelf: 'center',
+        marginTop: '10%',
+        width: 74,
+        height: 30,
+    },
+    guide: {
+        borderRadius: 15,
+        elevation: 2.5,
+        backgroundColor: 'white',
+        margin: '5%',
+        overflow: 'hidden',
+    },
+    guideWhite: {
+        padding: '6%',
+    },
+    guideWhiteText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#58AFFF',
+        alignSelf: 'center',
+    },
+    guideBlue: {
+        padding: '6%',
+        backgroundColor: '#58AFFF',
+    },
+    guideBlueText: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'white',
+        alignSelf: 'center',
+    },
+    textContainer: {
+        padding: '5%',
+        paddingVertical: '7%',
+        paddingRight: '11%',
+    },
+    texts: {
+        padding: '5%',
+        paddingVertical: '3%',
+        flexDirection: 'row',
+    },
+    number: {
+        fontSize: 13,
+        height: 20,
+        width: 20,
+        borderRadius: 20,
+        color: 'white',
+        fontWeight: 'bold',
+        backgroundColor: '#58AFFF',
+        paddingLeft: 6.2,
+        paddingTop: 0.5,
+        marginTop: 2.5,
+        marginRight: 10,
     },
 });
 
-export default IssueBlueScreen;
+export default GuideScreen;
