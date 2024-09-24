@@ -6,7 +6,7 @@ const { width } = Dimensions.get('window');
 
 const carouselItems = [
     { id: '1', image: require('../assets/home/reform.png'), page: 'ReformScreen' },
-    { id: '2', image: require('../assets/home/new-clothes.png') },
+    { id: '2', image: require('../assets/home/new-clothes.png'), page: 'StoreScreen' },
 ];
 
 const Carousel = () => {

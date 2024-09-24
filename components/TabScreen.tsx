@@ -33,7 +33,8 @@ const TabScreen = ({ menus, initTabIndex = 0, contents }: Props) => {
                 pagingEnabled
                 ref={scrollViewRef}
                 scrollEventThrottle={16}
-                showsHorizontalScrollIndicator={false}
+                showsHorizontalScrollIndicator
+                ={false}
                 onMomentumScrollEnd={(e) => {
                     const newIndex = Math.floor(
                         Math.max(0, e.nativeEvent.contentOffset.x) / windowWidth
