@@ -16,6 +16,9 @@ import GuideScreen from './screens/more/GuideScreen';
 import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
 import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+import InquiryDetailScreen from './screens/store/InquiryDetailScreen';
+import OrderScreen from './screens/store/OrderScreen';
+import PaymentScreen from './screens/store/PaymentScreen';
 
 import { RootStackParamList } from './types';
 
@@ -67,8 +70,9 @@ export default function App() {
                     name="Reform"
                     component={ReformScreen}
                     options={{
-                        headerTitle: () => <HeaderTitle/>,
+                        headerTitle: '직접 리폼하기',
                         headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
                     }}
                 />
                 <Stack.Screen
@@ -91,7 +95,7 @@ export default function App() {
                     options={{
                         headerTitle: '',
                         headerStyle: {
-                          backgroundColor: 'transparent',
+                            backgroundColor: 'transparent',
                         },
                         headerTransparent: true,
                         headerLeft: undefined,
@@ -102,6 +106,33 @@ export default function App() {
                     component={GuideScreen}
                     options={{
                         headerTitle: '유즈업 이용 가이드',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
+                    }}
+                />
+                <Stack.Screen
+                    name="InquiryDetail"
+                    component={InquiryDetailScreen}
+                    options={{
+                        headerTitle: '문의하기',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
+                    }}
+                />
+                <Stack.Screen
+                    name="Order"
+                    component={OrderScreen}
+                    options={{
+                        headerTitle: '주문하기',
+                        headerTitleAlign: 'center',
+                        headerTitleStyle: styles.title,
+                    }}
+                />
+                <Stack.Screen
+                    name="Payment"
+                    component={PaymentScreen}
+                    options={{
+                        headerTitle: '주문 완료',
                         headerTitleAlign: 'center',
                         headerTitleStyle: styles.title,
                     }}
