@@ -60,6 +60,7 @@ const StoreScreen = () => {
 
                 <HeaderLogo
                     source={require('../../assets/store/basket.png')}
+                    page='Basket'
                 />
 
                 <View style={styles.search}>

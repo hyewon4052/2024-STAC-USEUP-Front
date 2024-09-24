@@ -28,6 +28,7 @@ const HomeScreen = () => {
 
                 <HeaderLogo
                     source={require('../../assets/home/bell.png')}
+                    page='none'
                 />
 
                 <Text style={styles.greeting}>안녕하세요. 하영님!</Text>
