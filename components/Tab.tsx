@@ -20,7 +20,7 @@ const Color = {
 
 const TYPOS = {
     normal: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: '600',
     },
 };
@@ -82,7 +82,7 @@ const Tab = ({
     const renderTab = (menu: string, index: number) => (
         <Pressable
             style={{
-            height: 32,
+            height: 60,
             alignItems: 'center',
             justifyContent: 'center',
             paddingHorizontal: 16,
@@ -115,9 +115,9 @@ const Tab = ({
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ paddingHorizontal: 16 }}
             style={{
-            flexDirection: 'row',
-            backgroundColor: Color.white,
-            maxHeight: 32,
+                flexDirection: 'row',
+                backgroundColor: Color.white,
+                maxHeight: 32,
             }}
         >
             {renderTabIndicator()}
