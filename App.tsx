@@ -4,16 +4,19 @@ import { Text, StyleSheet, Dimensions, View, TouchableOpacity, Image } from 'rea
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+/* 홈 탭 */
 import HomeScreen from './screens/home/HomeScreen';
-import StoreScreen from './screens/store/StoreScreen';
 import HomeMoreScreen from './screens/home/HomeMoreScreen';
 import IssueBlueScreen from './screens/more/IssueBlueScreen';
 import IssueRedScreen from './screens/more/IssueRedScreen';
 import IssueYellowScreen from './screens/more/IssueYellowScreen';
 import ReformScreen from './screens/more/ReformScreen';
 import GuideScreen from './screens/more/GuideScreen';
-import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+/* 스토어 탭 */
+import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
+import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+
 import { RootStackParamList } from './types';
 
 const Stack = createStackNavigator();
@@ -25,7 +28,7 @@ export default function App() {
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen
                     name="Home"
-                    component={HomeScreen}
+                    component={TabNavigator}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen
@@ -112,9 +115,9 @@ function TabNavigator() {
     return (
         <Tab.Navigator style={styles.BottomMenu}>
             <Tab.Screen name="홈" component={HomeScreen} options={{ headerShown: false }}/>
-            <Tab.Screen name="수거"/>
-            <Tab.Screen name="스토어" component={storeScreen} options={{ headerShown: false }}/>
-            <Tab.Screen name="마이페이지"/>
+            <Tab.Screen name="수거" component={HomeScreen}/>
+            <Tab.Screen name="스토어" component={StoreScreen} options={{ headerShown: false }}/>
+            <Tab.Screen name="마이페이지" component={StoreScreen}/>
         </Tab.Navigator>
   );
 }

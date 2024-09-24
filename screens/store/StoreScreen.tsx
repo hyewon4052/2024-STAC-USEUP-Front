@@ -42,7 +42,7 @@ const posts = {
     ],
 };
 
-const storeScreen = () => {
+const StoreScreen = () => {
     const navigation = useNavigation();
     const [selectedCategory, setSelectedCategory] = useState<string>('신상품');
     const [heartStates, setHeartStates] = useState<{ [key: string]: boolean }>({});
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default storeScreen;
+export default StoreScreen;
 
 
 
