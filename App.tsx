@@ -1,6 +1,7 @@
 import './gesture-handler';
 import * as React from 'react';
 import { Text, StyleSheet, Dimensions, View, TouchableOpacity, Image, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,14 +14,14 @@ import IssueYellowScreen from './screens/more/IssueYellowScreen';
 import ReformScreen from './screens/more/ReformScreen';
 import GuideScreen from './screens/more/GuideScreen';
 /* 수거 탭 */
-import Collect from './screens/collect';
+import Collect from './screens/Collect';
 import CollectApply from './screens/CollectApply';
 import CollectApplying from './screens/CollectApplying';
 import CollectSuccess from './screens/CollectSuccess';
 /* 스토어 탭 */
 import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
-import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+import NCdinosbagScreen from './screens/goods/NCdinosbagScreen';
 import InquiryDetailScreen from './screens/store/InquiryDetailScreen';
 import OrderScreen from './screens/store/OrderScreen';
 import PaymentScreen from './screens/store/PaymentScreen';
@@ -66,7 +67,6 @@ export default function App() {
         <View style={styles.container}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Home">
-                    /* 홈 */
                     <Stack.Screen
                         name="Home"
                         component={TabNavigator}
@@ -123,7 +123,6 @@ export default function App() {
                         }}
                     />
 
-                    /* 수거 */
                     <Stack.Screen
                         name="Collect"
                         component={TabNavigator} // Tab Navigator를 Stack.Navigator의 첫 번째 화면으로 설정
@@ -161,7 +160,6 @@ export default function App() {
                         }}
                     />
 
-                    /* 스토어 */
                     <Stack.Screen
                         name="Store"
                         component={StoreScreen}
@@ -216,7 +214,6 @@ export default function App() {
                         }}
                     />
 
-                    /* 마이페이지 */
                     <Stack.Screen
                         name="AccountInformation"
                         component={AccountInformation} //
@@ -273,6 +270,7 @@ function TabNavigator() {
 
     return (
         <Tab.Navigator
+            style={styles.footer}
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
                     let iconSource;
@@ -301,8 +299,8 @@ function TabNavigator() {
                 },
                 tabBarActiveTintColor: '#46A6FF', // 활성화된 탭의 텍스트 색상
                 tabBarInactiveTintColor: '#D1D2D1',  // 비활성화된 탭의 텍스트 색상
-                tabBarLabelStyle: { fontSize: 12}, // 탭 텍스트 크기 조정
-                tabBarStyle: { backgroundColor: '#ffffff', paddingHorizontal: 10, paddingVertical: 20, paddingBottom: 10},
+                tabBarLabelStyle: { fontSize: 12, marginBottom: 12}, // 탭 텍스트 크기 조정
+                tabBarStyle: { backgroundColor: '#ffffff', paddingHorizontal: 10, paddingTop: 40, height: 70 },
                 contentStyle: { backgroundColor: '#ffffff' },
             })}
             >
@@ -383,7 +381,7 @@ const styles = StyleSheet.create({
     tabIcon: {
         width: 24,
         height: 24,
-        marginTop: 5,
+//         marginTop: 5,
         marginBottom: 30, // 아이콘을 탭 바 상단으로 밀어 올림
     },
 });
