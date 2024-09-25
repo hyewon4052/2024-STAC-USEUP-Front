@@ -19,26 +19,26 @@ const categoryImages = {
 
 const posts = {
     신상품: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'NCBag' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '3', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '4', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '1', image: require('../../assets/store/NCdinosBag/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'NCBag' },
+      { id: '2', image: require('../../assets/store/shirtist/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'Shirtist' },
+      { id: '3', image: require('../../assets/store/jaket/jaket.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'Jaket' },
+      { id: '4', image: require('../../assets/store/skirt/skirt.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'Skirt' },
     ],
     Hot: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '1', image: require('../../assets/store/dress/dresses.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'Dresses' },
+      { id: '2', image: require('../../assets/store/ecoBag/ecobag.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'EcoBag' },
     ],
     Top: [
-      { id: '1', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
+      { id: '1', image: require('../../assets/store/dress/dresses.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'Dresses' },
+      { id: '3', image: require('../../assets/store/jaket/jaket.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'Jaket' },
     ],
     Bottom: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '4', image: require('../../assets/store/skirt/skirt.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'Skirt' },
+      { id: '2', image: require('../../assets/store/shirtist/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'Shirtist' },
     ],
     Bag: [
-      { id: '1', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
+      { id: '1', image: require('../../assets/store/NCdinosBag/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'NCBag' },
+      { id: '2', image: require('../../assets/store/ecoBag/ecobag.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원', page: 'EcoBag' },
     ],
 };
 

@@ -1,15 +1,25 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, Linking } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 
 const GuideScreen = () => {
+    const navigation = useNavigation();
+
+    const youtubeLink = () => {
+        const youtubeURL = 'https://www.youtube.com/watch?v=8RaUxT-t0MQ';
+        Linking.openURL(youtubeURL).catch(err => console.error("Failed to open URL", err));
+    };
+
     return (
         <View style={styles.container}>
             <ScrollView>
                 <Image style={styles.cover} source={require('../../assets/more/reform-m.png')}/>
                 <Image style={styles.background} source={require('../../assets/more/coin.png')}/>
+                <TouchableOpacity onPress={youtubeLink}>
+                    <Image style={styles.background} source={require('../../assets/video.png')}/>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );

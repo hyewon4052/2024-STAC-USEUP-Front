@@ -18,7 +18,7 @@ const BasketScreen = () => {
                             <TouchableOpacity style={styles.heart}>
                                 <Image source={require('../../assets/store/heart.png')} style={styles.heartImage}/>
                             </TouchableOpacity>
-                                <Image source={require('../../assets/store/NCdinos-bag.png')} style={styles.goodsImage}/>
+                                <Image source={require('../../assets/store/NCdinosBag/NCdinos-bag.png')} style={styles.goodsImage}/>
                                 <Text style={styles.goodsText}>BEAR MAN</Text>
                                 <Text style={styles.goodsText}>NC 다이노스 유니폼 백팩</Text>
                                 <Text style={styles.price}>00,000 원</Text>
@@ -29,7 +29,7 @@ const BasketScreen = () => {
                             <TouchableOpacity style={styles.heart}>
                                 <Image source={require('../../assets/store/heart.png')} style={styles.heartImage}/>
                             </TouchableOpacity>
-                                <Image source={require('../../assets/store/shirtist.png')} style={styles.goodsImage}/>
+                                <Image source={require('../../assets/store/shirtist/shirtist.png')} style={styles.goodsImage}/>
                                 <Text style={styles.goodsText}>SHIRTIST</Text>
                                 <Text style={styles.goodsText}>제품명</Text>
                                 <Text style={styles.price}>00,000 원</Text>
@@ -40,7 +40,7 @@ const BasketScreen = () => {
                             <TouchableOpacity style={styles.heart}>
                                 <Image source={require('../../assets/store/heart.png')} style={styles.heartImage}/>
                             </TouchableOpacity>
-                                <Image source={require('../../assets/store/NCdinos-bag.png')} style={styles.goodsImage}/>
+                                <Image source={require('../../assets/store/NCdinosBag/NCdinos-bag.png')} style={styles.goodsImage}/>
                                 <Text style={styles.goodsText}>BEAR MAN</Text>
                                 <Text style={styles.goodsText}>제품명</Text>
                                 <Text style={styles.price}>00,000 원</Text>
@@ -51,7 +51,7 @@ const BasketScreen = () => {
                             <TouchableOpacity style={styles.heart}>
                                 <Image source={require('../../assets/store/heart.png')} style={styles.heartImage}/>
                             </TouchableOpacity>
-                                <Image source={require('../../assets/store/shirtist.png')} style={styles.goodsImage}/>
+                                <Image source={require('../../assets/store/shirtist/shirtist.png')} style={styles.goodsImage}/>
                                 <Text style={styles.goodsText}>SHIRTIST</Text>
                                 <Text style={styles.goodsText}>제품명</Text>
                                 <Text style={styles.price}>00,000 원</Text>
