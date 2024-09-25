@@ -11,7 +11,7 @@ const PurchaseComponent = ({ title, date, iconSource, onPress }) => {
                     <Image source={iconSource} style={styles.icon} resizeMode="contain" />
                     <View style={styles.textContainer}>
                         <Text style={styles.title}>{formattedTitle}</Text>
-                        <Text style={styles.date}>날짜 : {date}</Text>
+                        <Text style={styles.date}>신청 날짜 : {date}</Text>
                     </View>
                     <View style={styles.addContainer}>
                         <TouchableOpacity onPress={onPress}>
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
         height: 100,
         borderRadius: 4.46,
         paddingTop: 10,
-//         backgroundColor: '#F0F0F0',
         alignItems: 'center',
         marginRight: 6,
     },
@@ -51,18 +50,18 @@ const styles = StyleSheet.create({
     contentContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginLeft: 150,
+        marginLeft: 220,
         marginTop: 40,
-//         width: '100%',
     },
     textContainer: {
         marginLeft: 13,
         marginTop: 13,
     },
     addContainer: {
-        marginHorizontal: 10,
+        left: 80,
     },
     title: {
+        width: 120,
         fontSize: 16,
         color: '#000000',
         fontWeight: 'bold',
