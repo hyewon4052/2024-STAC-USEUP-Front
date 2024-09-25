@@ -14,17 +14,17 @@ const AllActivityScreen = () => {
         {
            title: "NC 다이노스 유니폼 백팩", // 여기서 title을 정의
            date : "08/22", // 여기서 date를 정의
-           iconSource : require('../assets/shopping3.png'),
+           iconSource : require('../assets/shopping2.png'),
         },
         {
            title: "02 키트", // 여기서 title을 정의
            date : "08/22", // 여기서 date를 정의
-           iconSource : require('../assets/calendar3.png'),
+           iconSource : require('../assets/calendar2.png'),
         },
         {
            title: "03 키트", // 여기서 title을 정의
            date : "08/22", // 여기서 date를 정의
-           iconSource : require('../assets/calendar3.png'),
+           iconSource : require('../assets/calendar2.png'),
         },
         {
            title: "01 키트", // 여기서 title을 정의
@@ -81,18 +81,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-
     },
     subContainer: {
         marginVertical: 80,
-
     },
     titleText: {
         margin : 25,
         color: 'black',
         fontWeight: 'bold',
         fontSize: 20,
-
     },
 });
 

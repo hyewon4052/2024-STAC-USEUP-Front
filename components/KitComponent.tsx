@@ -7,7 +7,7 @@ const KitComponent = ({ title, date, iconSource, onPress }) => {
 
     const handlePress = () => {
         if (iconSource === require('../assets/shopping3.png')) {
-            onPress(title, date, iconSource); // 수정된 부분
+            onPress(title, date, iconSource, onPress); // 수정된 부분
         } else {
             Alert.alert('알림', '이 아이콘은 이동할 수 없습니다.');
         }
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         backgroundColor: 'white',
-        shadowColor: '#000000',
+        shadowColor: '#ADADAD',
         shadowOpacity: 0.08,
         shadowRadius: 12,
         shadowOffset: { width: 0, height: 4 },
