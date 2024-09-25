@@ -18,6 +18,7 @@ const BlueButton = (prop) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        margin: 'auto',
     },
     title: {
         fontSize: 24,

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-const MyListItem = ({ imageSource, title, productName, price, width, height, onPress }) => {
+const MyListItem = ({ imageSource, title, productName, price, width, height, page }) => {
     return (
-        <TouchableOpacity onPress={onPress}>
+        <TouchableOpacity onPress={() => navigation.navigate(page)}>
             <View style={styles.kitContainer}>
                 <Image
                     style={[styles.myListImg, { width: width, height: height }]}

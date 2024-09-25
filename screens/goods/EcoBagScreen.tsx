@@ -19,7 +19,7 @@ const NCdinosbag = () => {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.Wrap}>
-                <GoodsCarousel images={[require('../../assets/store/NCdinos-bag/NCdinos-bag.png'), require('../../assets/store/NCdinos-bag/NCdinos-bag.png')]} />
+                <GoodsCarousel images={[require('../../assets/store/ecoBag/ecobag.png'), require('../../assets/store/ecoBag/ecobag.png')]} />
 
                 <Name
                     seller='BEARMAN'
@@ -36,7 +36,7 @@ const NCdinosbag = () => {
                     contents={[
                         <View>
                             <Info />
-                            <Image source={require('../../assets/store/NCdinos-bag/NCdinos-bag.png')} style={styles.Images}/>
+                            <Image source={require('../../assets/store/ecoBag/ecobag.png')} style={styles.Images}/>
                         </View>,
                         <View>
                             <Inquiry />
