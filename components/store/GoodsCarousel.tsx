@@ -74,13 +74,13 @@ const styles = StyleSheet.create({
     arrowLeft: {
         position: 'absolute',
         left: 0,
-        top: '50%',
+        top: '47%',
         zIndex: 1,
     },
     arrowRight: {
         position: 'absolute',
         right: 0,
-        top: '50%',
+        top: '47%',
         zIndex: 1,
     },
     arrowImage: {
