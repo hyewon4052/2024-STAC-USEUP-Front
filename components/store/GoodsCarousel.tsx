@@ -46,13 +46,13 @@ const GoodsCarousel = ({ images }) => {
 
             {currentIndex > 0 && (
                 <TouchableOpacity style={styles.arrowLeft} onPress={goToPrevious}>
-                    <Image source={require('../../assets/arrow-L-W.png')} style={styles.arrowImage} />
+                    <Image source={require('../../assets/arrow-L-B.png')} style={styles.arrowImage} />
                 </TouchableOpacity>
             )}
 
             {currentIndex < images.length - 1 && (
                 <TouchableOpacity style={styles.arrowRight} onPress={goToNext}>
-                   <Image source={require('../../assets/arrow-R-W.png')} style={styles.arrowImage} />
+                   <Image source={require('../../assets/arrow-R-B.png')} style={styles.arrowImage} />
                 </TouchableOpacity>
             )}
         </View>

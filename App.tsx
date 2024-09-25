@@ -1,6 +1,7 @@
 import './gesture-handler';
 import * as React from 'react';
 import { Text, StyleSheet, Dimensions, View, TouchableOpacity, Image, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -21,7 +22,7 @@ import CollectSuccess from './screens/CollectSuccess';
 /* 스토어 탭 */
 import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
-import NCdinosbagScreen from './screens/store/NCdinosbagScreen';
+import NCdinosbagScreen from './screens/goods/NCdinosbagScreen';
 import InquiryDetailScreen from './screens/store/InquiryDetailScreen';
 import OrderScreen from './screens/store/OrderScreen';
 import PaymentScreen from './screens/store/PaymentScreen';
@@ -67,11 +68,11 @@ export default function App() {
     return (
         <View style={styles.container}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Home"
+                <Stack.Navigator
                     screenOptions={{
                       contentStyle: { backgroundColor: '#ffffff' }, // Add this line for all stack screens
                     }}>
-
+                <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen
                         name="Home"
                         component={TabNavigator}
@@ -352,6 +353,7 @@ function TabNavigator() {
 
     return (
         <Tab.Navigator
+            style={styles.footer}
             screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused }) => {
                     let iconSource;
@@ -380,8 +382,8 @@ function TabNavigator() {
                 },
                 tabBarActiveTintColor: '#46A6FF', // 활성화된 탭의 텍스트 색상
                 tabBarInactiveTintColor: '#D1D2D1',  // 비활성화된 탭의 텍스트 색상
-                tabBarLabelStyle: { fontSize: 12}, // 탭 텍스트 크기 조정
-                tabBarStyle: { backgroundColor: '#ffffff', paddingHorizontal: 15, paddingVertical: 30, paddingBottom: 15, height: 70},
+                tabBarLabelStyle: { fontSize: 12, marginBottom: 12}, // 탭 텍스트 크기 조정
+                tabBarStyle: { backgroundColor: '#ffffff', paddingHorizontal: 10, paddingTop: 40, height: 70 },
                 contentStyle: { backgroundColor: '#ffffff' },
             })}
             >
@@ -480,7 +482,7 @@ const styles = StyleSheet.create({
     tabIcon: {
         width: 24,
         height: 24,
-        marginTop: 5,
+//         marginTop: 5,
         marginBottom: 30, // 아이콘을 탭 바 상단으로 밀어 올림
     },
 });
