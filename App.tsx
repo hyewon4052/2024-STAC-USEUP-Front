@@ -5,7 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useNavigation } from '@react-navigation/native';
 /* 홈 탭 */
 import HomeScreen from './screens/home/HomeScreen';
 import HomeMoreScreen from './screens/home/HomeMoreScreen';
@@ -72,7 +71,6 @@ export default function App() {
                     screenOptions={{
                       contentStyle: { backgroundColor: '#ffffff' }, // Add this line for all stack screens
                     }}>
-                <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen
                         name="Home"
                         component={TabNavigator}
