@@ -1,10 +1,11 @@
 import './gesture-handler';
 import * as React from 'react';
-import { Text, StyleSheet, Dimensions, View, TouchableOpacity, Image, Alert } from 'react-native';
+import { Text, StyleSheet, View, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LoginScreen from './screens/LoginScreen';
 /* 홈 탭 */
 import HomeScreen from './screens/home/HomeScreen';
 import HomeMoreScreen from './screens/home/HomeMoreScreen';
@@ -42,24 +43,20 @@ const Tab = createBottomTabNavigator();
 
 //fetch api
 const getFromApi = () => {
-  fetch('http://10.0.2.2:3000/ping')
+    fetch('http://10.0.2.2:3000/ping')
     .then(response => {
-      console.log('Response:', response);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      // 응답 헤더 확인
-      const contentType = response.headers.get('Content-Type');
-      console.log('Content-Type:', contentType);
-      return response.json();
+    if (!response.ok) {
+    throw new Error('Network response was not ok');
+    }
+    return response.json();
     })
     .then(data => {
-      Alert.alert('Success', '호출 성공');
-      console.log('Data:', data);
+    Alert.alert('Success', '호출 성공');
+    console.log('Data:', data);
     })
     .catch(error => {
-      Alert.alert('Error', error.message || 'Request failed!');
-      console.error('Error:', error);
+    Alert.alert('Error', error.message || 'Request failed!');
+    console.error('Error:', error);
     });
 };
 
@@ -71,6 +68,11 @@ export default function App() {
                     screenOptions={{
                       contentStyle: { backgroundColor: '#ffffff' }, // Add this line for all stack screens
                     }}>
+                    <Stack.Screen
+                        name="Login"
+                        component={LoginScreen}
+                        options={{ headerShown: false }}
+                    />
                     <Stack.Screen
                         name="Home"
                         component={TabNavigator}
