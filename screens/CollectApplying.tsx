@@ -51,8 +51,6 @@ const CollectApplyingScreen = () => {
             <TouchableOpacity style={styles.btnContainer} onPress={handlePress}>
                 <LinearGradient
                     colors={['#36B7FF', '#5883FF']}
-                    start={{ x: 1, y: 0 }}
-                    end={{ x: 0, y: 0 }}
                     style={styles.collectBtn}
                 >
                     <Text style = {styles.collectBtnText}>수거신청</Text>
@@ -67,15 +65,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        margin: 35,
+        padding: 35,
     },
     btnContainer: {
-//         marginHorizontal: 30,
+        marginTop: 30,
+
     },
     smallBtnContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-//         marginRight: 6,
         marginTop: 16,
     },
     mainSection: {
@@ -113,7 +111,6 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#AAAAAA',
         marginBottom: 25,
-        keyboardType: 'default',
     },
     collectBtn: {
         width: 'auto',

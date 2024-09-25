@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useNavigation } from '@react-navigation/native';
 /* 홈 탭 */
 import HomeScreen from './screens/home/HomeScreen';
 import HomeMoreScreen from './screens/home/HomeMoreScreen';
@@ -33,6 +34,7 @@ import Manage from './screens/Manage';
 import Ask from './screens/Ask';
 import Account from './screens/Account';
 import AllActivity from './screens/AllActivity';
+import Location from './screens/Location';
 
 import { RootStackParamList } from './types';
 
@@ -66,6 +68,10 @@ export default function App() {
     return (
         <View style={styles.container}>
             <NavigationContainer>
+                <Stack.Navigator
+                    screenOptions={{
+                      contentStyle: { backgroundColor: '#ffffff' }, // Add this line for all stack screens
+                    }}>
                 <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen
                         name="Home"
@@ -122,7 +128,6 @@ export default function App() {
                             headerTitleStyle: styles.title,
                         }}
                     />
-
                     <Stack.Screen
                         name="Collect"
                         component={TabNavigator} // Tab Navigator를 Stack.Navigator의 첫 번째 화면으로 설정
@@ -139,7 +144,28 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '수거신청',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="AllActivity" // 변경된 부분
+                        component={AllActivity} // 변경된 부분
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '수거',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
                     <Stack.Screen
                         name="CollectApplying" // 변경된 부분
@@ -148,7 +174,13 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '수거신청',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
                     <Stack.Screen
                         name="CollectSuccess"
@@ -157,9 +189,14 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '수거 완료',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
-
                     <Stack.Screen
                         name="Store"
                         component={StoreScreen}
@@ -213,7 +250,6 @@ export default function App() {
                             headerTitleStyle: styles.title,
                         }}
                     />
-
                     <Stack.Screen
                         name="AccountInformation"
                         component={AccountInformation} //
@@ -221,7 +257,13 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '계정 정보',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
                     <Stack.Screen
                         name="Address"
@@ -230,7 +272,28 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '주소 관리',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="Location"
+                        component={Location} //
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '주소 추가',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
                     <Stack.Screen
                         name="Manage"
@@ -239,15 +302,28 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '계좌 관리',
-                        }}
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
                     />
                     <Stack.Screen
                         name="Ask"
-                        component={Ask} //
+                        component={Ask}
                         options={{
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '문의 내역',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },
                         }}
                     />
                     <Stack.Screen
@@ -257,6 +333,13 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '계정 관리',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },
                         }}
                     />
                 </Stack.Navigator>
@@ -319,7 +402,16 @@ function TabNavigator() {
             }} />
             <Tab.Screen name="수거" component={Collect}
                 options={{
-                headerShown:false,
+                headerShown: true,
+                headerTitle: '수거',
+                headerTitleAlign: 'center',
+                headerStyle: {
+                      elevation: 4, // Android 그림자 높이
+                      shadowColor: '#000', // iOS 그림자 색상
+                      shadowOpacity: 0.25, // iOS 그림자 투명도
+                      shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                      shadowRadius: 4, // iOS 그림자 반경
+                },
                 tabBarButton: (props) => (
                     <TouchableOpacity
                         {...props}
@@ -345,7 +437,16 @@ function TabNavigator() {
             }} />
             <Tab.Screen name="마이페이지" component={MyPage}
                 options={{
-                headerShown:false,
+                headerShown: true,
+                headerTitle: '마이페이지',
+                headerTitleAlign: 'center',
+                headerStyle: {
+                      elevation: 4, // Android 그림자 높이
+                      shadowColor: '#000', // iOS 그림자 색상
+                      shadowOpacity: 0.25, // iOS 그림자 투명도
+                      shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                      shadowRadius: 4, // iOS 그림자 반경
+                },
                 tabBarButton: (props) => (
                     <TouchableOpacity
                         {...props}

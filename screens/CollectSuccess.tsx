@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        margin: 35,
+        padding: 35,
         justifyContent: 'space-between',
     },
     btnContainer: {
-        marginTop: 57, // 화면 하단에서 57px 위로 설정
+        marginTop: 57,
     },
     mainSection: {
         alignItems: 'center',
