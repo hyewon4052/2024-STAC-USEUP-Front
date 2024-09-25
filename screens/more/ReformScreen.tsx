@@ -3,19 +3,13 @@ import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, Toucha
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
+
 const GuideScreen = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
-                <Image style={styles.background} source={require('../../assets/more/reform-m.png')}/>
-                <View>
-                    <View style={styles.title}>
-                        <View style={styles.titleText}>
-                            <Text style={styles.contentText}>수거 신청 하기</Text>
-                            <Text>앱 하단 수거 탭에서 수거 클릭!</Text>
-                        </View>
-                    </View>
-                </View>
+                <Image style={styles.cover} source={require('../../assets/more/reform-m.png')}/>
+                <Image style={styles.background} source={require('../../assets/more/coin.png')}/>
             </ScrollView>
         </View>
     );
@@ -26,31 +20,39 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    background: {
+    cover: {
         width: '100%',
         height: 240,
         margin: 0,
         padding: 0,
     },
+    background: {
+        width: 350,
+        height: 200,
+        marginTop: 20,
+        padding: 0,
+        marginHorizontal: "7.5%",
+    },
     title: {
-        fontSize: 26,
-        fontWeight: 'bold',
         marginBottom: 10,
-        color: '#46A6FF',
         padding: '5%',
-        paddingVertical: '7%',
-        paddingRight: '11%',
+        alignItems: 'center',
     },
     titleText: {
-        padding: '5%',
-        paddingVertical: '3%',
+        fontSize: 26,
+        fontWeight: 'bold',
+        paddingVertical: 20,
         flexDirection: 'row',
+        color: '#46A6FF',
     },
     contentText: {
         fontSize: 18,
-        color: '#333',
         marginVertical: 2,
-        color: 'white',
+        color: '#46A6FF',
+    },
+    video: {
+        width: '100%',
+        height: 300, // 적절한 높이 설정
     },
 });
 
