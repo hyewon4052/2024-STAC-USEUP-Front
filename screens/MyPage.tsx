@@ -61,105 +61,90 @@ const CollectSuccessScreen = () => {
                         />
                     </View>
                     <View style={styles.detailContainer}>
-                        <Text style={styles.myShopNumberSection}>
-                            <Text style={styles.myShopNumber}>4</Text>
-                            <Text style={styles.myShopNumber}>2</Text>
-                            <Text style={styles.myShopNumber}>2</Text>
-                            <Text style={styles.myShopNumber}>1</Text>
-                        </Text>
-                        <Text style={styles.myShopLabelSection}>
-                            <Text style={styles.myShopLabel}>전체</Text>
-                            <Text style={styles.myShopLabel}>입금/결제</Text>
-                            <Text style={styles.myShopLabel}>배송중</Text>
-                            <Text style={styles.myShopLabel}>배송완료</Text>
-                        </Text>
+                        <View style={[styles.myShopLabelSection, { borderLeftWidth: 0}]}>
+                            <TouchableOpacity>
+                                <Text style={styles.myShopNumber}>4</Text>
+                                <Text style={styles.myShopLabel}>전체</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.myShopLabelSection}>
+                            <TouchableOpacity>
+                                <Text style={styles.myShopNumber}>2</Text>
+                                <Text style={styles.myShopLabel}>입금/결제</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.myShopLabelSection}>
+                            <TouchableOpacity>
+                                <Text style={styles.myShopNumber}>2</Text>
+                                <Text style={styles.myShopLabel}>배송중</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={[styles.myShopLabelSection, { borderRightWidth: 0}]}>
+                            <TouchableOpacity>
+                                <Text style={styles.myShopNumber}>1</Text>
+                                <Text style={styles.myShopLabel}>배송완료</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
                 <View style={styles.myListContainer}>
                     <Text style={styles.myListText}>마이찜 목록</Text>
-                            <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 30}}>
-                                <MyListItem
-                                    imageSource={require('../assets/jeans.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={66}
-                                    height={90}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/cover.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={83}
-                                    height={83}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/wallet.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={87}
-                                    height={81}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/bag.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={78}
-                                    height={78}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/ecobag.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={90}
-                                    height={70}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/pocket.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={93}
-                                    height={94}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/bag.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={78}
-                                    height={78}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/ecobag.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={90}
-                                    height={70}
-                                />
-                                <MyListItem
-                                    imageSource={require('../assets/pocket.png')}
-                                    title="SHIRTIST"
-                                    price="00,000 원"
-                                    productName="제품명"
-                                    onPress={() => {}}
-                                    width={93}
-                                    height={94}
-                                />
-                            </View>
+                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 30}}>
+                            <MyListItem
+                                imageSource={require('../assets/store/NCdinosBag/NCdinos-bag.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={66}
+                                height={90}
+                            />
+                            <MyListItem
+                                imageSource={require('../assets/store/shirtist/shirtist.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={83}
+                                height={83}
+                            />
+                            <MyListItem
+                                imageSource={require('../assets/store/jaket/jaket.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={87}
+                                height={81}
+                            />
+                            <MyListItem
+                                imageSource={require('../assets/store/skirt/skirt.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={78}
+                                height={78}
+                            />
+                            <MyListItem
+                                imageSource={require('../assets/store/dress/dresses.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={90}
+                                height={70}
+                            />
+                            <MyListItem
+                                imageSource={require('../assets/store/ecoBag/ecobag.png')}
+                                title="SHIRTIST"
+                                price="00,000 원"
+                                productName="제품명"
+                                page=' '
+                                width={93}
+                                height={94}
+                            />
+                        </View>
                 </View>
                 </ScrollView>
             </View>
@@ -173,18 +158,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingHorizontal: 31,
         backgroundColor: '#fff',
-        shadowColor: '#D9D9D9',           // iOS용 그림자 색상
         elevation: 8,
-    },
-    scrollView: {
-//         v
     },
     accountContainer: {
         marginHorizontal: 15,
         flexDirection: 'row',
         justifyContent: 'space-between',
-//         borderRadius: 8,
-//         border: 2,
     },
     pointContainer: {
         flexDirection: 'row',
@@ -212,25 +191,22 @@ const styles = StyleSheet.create({
     },
     detailContainer: {
         alignItems: 'center',
-        flexDirection: 'column',
+        flexDirection: 'row',
         marginTop: 15,
+        textAlign: 'center',
+    },
+    myShopLabelSection: {
+        width: 79,
+        borderLeftWidth: 1,
+        borderRightWidth: 1,
+        borderColor: '#EEEEEE',
+        marginBottom: 50,
     },
     myListContainer: {
         marginHorizontal: 15,
     },
     accountSection: {
-        shadowColor: '#000',           // iOS용 그림자 색상
-        shadowOffset: { width: 0, height: 2 },  // iOS용 그림자 오프셋
-        shadowOpacity: 0.1,            // iOS용 그림자 투명도
-        shadowRadius: 4,               // iOS용 그림자 반경
         elevation: 4,
-//         margin: 28,
-    },
-    myShopNumberSection : {
-        justifyContent: 'space-between',
-    },
-    myShopLabelSection: {
-
     },
     myShopTitle: {
         fontWeight: 'bold',
@@ -250,18 +226,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginHorizontal: 15,
         paddingVertical: 20,
-//         textAlign: 'center',
     },
     myShopNumber:{
-        fontSize: 22,
+        fontSize: 24,
         marginTop: 5,
         fontWeight: 'bold',
         color: '#D1D2D1',
+        textAlign: 'center',
     },
     myShopLabel: {
-        fontSize: 12,
+        fontSize: 14,
         color: '#D1D2D1',
-        marginHorizontal: 20,
+        textAlign: 'center',
+        marginBottom: 7,
     },
     myListText: {
         fontWeight: 'bold',
