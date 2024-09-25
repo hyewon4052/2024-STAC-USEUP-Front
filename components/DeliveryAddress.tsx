@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
-const DeliveryAddressComponent = () => {
+const DeliveryAddressComponent = ({ name, number, address1, address2, showCardText2, buttons }) => {
     const navigation = useNavigation();
 
     const handlePress = () => {
@@ -14,29 +14,35 @@ const DeliveryAddressComponent = () => {
     return (
         <View style={styles.cardContainer}>
             <View style={styles.card}>
-                <Text style={styles.cardTitle}>
-                    유즈업님
-                </Text>
+                <View style={{ flexDirection: 'row'}}>
+                    <Text style={styles.cardTitle}>
+                        {name}님
+                    </Text>
+                    <View style={styles.detailSection}>
+                        <Text style={styles.detailText}>
+                            기본배송지
+                        </Text>
+                    </View>
+                </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.cardText}>
-                        010-1234-5678
+                        {number}
                     </Text>
-                    <Text style={styles.cardText2}>
-                        서울시 강남구 {'\n'}
-                        유즈아파트 101동 401호
-                    </Text>
+                    { showCardText2 && (
+                        <Text style={styles.cardText2}>
+                            {address1} {'\n'}
+                            {address2}
+                        </Text>
+                    )}
                     <View style={styles.btnContainer}>
-                        <TouchableOpacity style={styles.btnSection}>
-                            <Text style={styles.btnText}>
-                                수정
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.btnSection}>
-                            <Text style={styles.btnText}>
-                                삭제
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
+                        {buttons.map(( buttons, index ) => (
+                            <TouchableOpacity key={index} style={styles.btnSection} onPress={buttons.onPress}>
+                                <Text style={styles.btnText}>
+                                    {buttons.text}
+                                </Text>
+                            </TouchableOpacity>
+                            ))}
+                       </View>
                 </View>
             </View>
         </View>
@@ -67,6 +73,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginRight: 10,
+    },
+    detailSection: {
+        marginTop: 6,
+        marginLeft: 206,
+        width: 47,
+        height: 16,
+        borderRadius: 8,
+        borderWidth: 0.8,
+        borderColor: '#46A6FF',
+        AlignItem: 'center',
+    },
+    detailText: {
+        fontWeight: 'bold',
+        fontSize: 8,
+        color: '#46A6FF',
+        textAlign: 'center',
     },
     card: {
         padding: 15,

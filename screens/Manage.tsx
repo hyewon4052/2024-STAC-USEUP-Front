@@ -14,7 +14,9 @@ const ManageScreen = () => {
 
     return (
         <View style={styles.container}>
-          <DeliveryAddress/>
+          <DeliveryAddress
+
+          />
         </View>
     );
 };
