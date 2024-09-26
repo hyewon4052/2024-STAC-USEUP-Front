@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, TextInput } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../types';
 
 const GuideScreen = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -29,7 +31,7 @@ const GuideScreen = () => {
                         />
                     </View>
                     <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>로그인</Text>
+                        <Text style={styles.buttonText} onPress={() => navigation.navigate('Home')}>로그인</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
@@ -44,7 +46,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     content: {
-        marginTop: '300',
+        marginTop: 130,
+        height: 500,
     },
     Wrap: {
         marginBottom: 20,
@@ -76,8 +79,9 @@ const styles = StyleSheet.create({
         color: '#fff',
         justifyItem: 'center',
         borderRadius: 33,
-        elevation: 2.5,
+        elevation: 10,
         margin: 'auto',
+        shadowColor: '#36B7FF'
     },
     buttonText:{
         fontSize: 21,

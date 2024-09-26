@@ -1,6 +1,6 @@
 import './gesture-handler';
 import * as React from 'react';
-import { Text, StyleSheet, View, Alert } from 'react-native';
+import { Text, StyleSheet, View, Alert, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -27,10 +27,16 @@ import AllActivity from './screens/AllActivity';
 /* 스토어 탭 */
 import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
-import NCdinosbagScreen from './screens/goods/NCdinosbagScreen';
 import InquiryDetailScreen from './screens/store/InquiryDetailScreen';
 import OrderScreen from './screens/store/OrderScreen';
 import PaymentScreen from './screens/store/PaymentScreen';
+/* 상품 탭 */
+import NCdinosbagScreen from './screens/goods/NCdinosbagScreen';
+import ShirtistScreen from './screens/goods/ShirtistScreen';
+import SkirtScreen from './screens/goods/SkirtScreen';
+import JacketScreen from './screens/goods/JacketScreen';
+import EcoBagScreen from './screens/goods/EcoBagScreen';
+import DressesScreen from './screens/goods/DressesScreen';
 /* 마이페이지 탭 */
 import MyPage from './screens/MyPage';
 import AccountInformation from './screens/AccountInformation';
@@ -50,18 +56,18 @@ const Tab = createBottomTabNavigator();
 const getFromApi = () => {
     fetch('http://10.0.2.2:3000/ping')
     .then(response => {
-    if (!response.ok) {
-    throw new Error('Network response was not ok');
-    }
-    return response.json();
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
     })
     .then(data => {
-    Alert.alert('Success', '호출 성공');
-    console.log('Data:', data);
+        Alert.alert('Success', '호출 성공');
+        console.log('Data:', data);
     })
     .catch(error => {
-    Alert.alert('Error', error.message || 'Request failed!');
-    console.error('Error:', error);
+        Alert.alert('Error', error.message || 'Request failed!');
+        console.error('Error:', error);
     });
 };
 
@@ -280,6 +286,66 @@ export default function App() {
                     <Stack.Screen
                         name="NCBag"
                         component={NCdinosbagScreen}
+                        options={{
+                            headerTitle: '',
+                            headerStyle: {
+                                backgroundColor: 'transparent',
+                            },
+                            headerTransparent: true,
+                            headerLeft: undefined,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Shirtist"
+                        component={ShirtistScreen}
+                        options={{
+                            headerTitle: '',
+                            headerStyle: {
+                                backgroundColor: 'transparent',
+                            },
+                            headerTransparent: true,
+                            headerLeft: undefined,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Skirt"
+                        component={SkirtScreen}
+                        options={{
+                            headerTitle: '',
+                            headerStyle: {
+                                backgroundColor: 'transparent',
+                            },
+                            headerTransparent: true,
+                            headerLeft: undefined,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Jacket"
+                        component={JacketScreen}
+                        options={{
+                            headerTitle: '',
+                            headerStyle: {
+                                backgroundColor: 'transparent',
+                            },
+                            headerTransparent: true,
+                            headerLeft: undefined,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="EcoBag"
+                        component={EcoBagScreen}
+                        options={{
+                            headerTitle: '',
+                            headerStyle: {
+                                backgroundColor: 'transparent',
+                            },
+                            headerTransparent: true,
+                            headerLeft: undefined,
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Dresses"
+                        component={DressesScreen}
                         options={{
                             headerTitle: '',
                             headerStyle: {

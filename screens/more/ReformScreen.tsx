@@ -1,15 +1,27 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, Linking } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 
 const GuideScreen = () => {
+    const navigation = useNavigation();
+
+    const youtubeLink = () => {
+        const youtubeURL = 'https://www.youtube.com/watch?v=8RaUxT-t0MQ';
+        Linking.openURL(youtubeURL).catch(err => console.error("Failed to open URL", err));
+    };
+
     return (
         <View style={styles.container}>
             <ScrollView>
                 <Image style={styles.cover} source={require('../../assets/more/reform-m.png')}/>
                 <Image style={styles.background} source={require('../../assets/more/coin.png')}/>
+                <TouchableOpacity onPress={youtubeLink}>
+                    <Image style={styles.step} source={require('../../assets/more/shortcut.png')}/>
+                    <Image style={styles.background} source={require('../../assets/video.png')}/>
+                    <Text style={styles.click}>클릭하면 영상으로 이동합니다</Text>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );
@@ -33,26 +45,26 @@ const styles = StyleSheet.create({
         padding: 0,
         marginHorizontal: "7.5%",
     },
-    title: {
-        marginBottom: 10,
-        padding: '5%',
-        alignItems: 'center',
+    step: {
+        alignSelf: 'center',
+        marginTop: '10%',
+        width: 74,
+        height: 30,
     },
-    titleText: {
-        fontSize: 26,
-        fontWeight: 'bold',
-        paddingVertical: 20,
-        flexDirection: 'row',
-        color: '#46A6FF',
-    },
-    contentText: {
-        fontSize: 18,
-        marginVertical: 2,
-        color: '#46A6FF',
+    youtubeLink: {
     },
     video: {
         width: '100%',
         height: 300, // 적절한 높이 설정
+    },
+    click: {
+        fontSize: 12,
+        alignSelf: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 130,
+        width: 200,
+        color: '#46A6FF',
     },
 });
 

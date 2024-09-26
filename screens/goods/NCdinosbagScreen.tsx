@@ -12,11 +12,6 @@ import GoodsFooter from '../../components/store/GoodsFooter';
 
 const { width } = Dimensions.get('window');
 
-const carouselItems = [
-    { id: '1', image: require('../../assets/store/NCdinos-bag/NCdinos-bag.png') },
-    { id: '2', image: require('../../assets/store/NCdinos-bag/NCdinos-bag.png') },
-];
-
 const NCdinosbag = () => {
     const navigation = useNavigation();
     const [tab, setTab] = useState(0);
@@ -24,7 +19,7 @@ const NCdinosbag = () => {
     return (
         <View style={styles.container}>
             <ScrollView style={styles.Wrap}>
-                <GoodsCarousel images={[require('../../assets/store/NCdinos-bag/NCdinos-bag.png'), require('../../assets/store/NCdinos-bag/NCdinos-bag.png')]} />
+                <GoodsCarousel images={[require('../../assets/store/NCdinosBag/NCdinos-bag.png'), require('../../assets/store/NCdinosBag/NCdinos-bag.png')]} />
 
                 <Name
                     seller='BEARMAN'
@@ -41,7 +36,7 @@ const NCdinosbag = () => {
                     contents={[
                         <View>
                             <Info />
-                            <Image source={require('../../assets/store/NCdinos-bag/NCdinos-bag.png')} style={styles.Images}/>
+                            <Image source={require('../../assets/store/NCdinosBag/NCdinos-bag.png')} style={styles.Images}/>
                         </View>,
                         <View>
                             <Inquiry />

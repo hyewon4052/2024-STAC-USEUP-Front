@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, ScrollView, Dimensions, TouchableOpacity, TextInput, Alert } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
@@ -13,12 +13,20 @@ const GoodsFooter = () => {
     return (
         <View style={styles.container}>
             <View style={styles.footer}>
-            <TouchableOpacity>
-                <Image source={require('../../assets/store/heart.png')} style={styles.heart}/>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Order')}>
-                <Text style={styles.Button}>장바구니 담기</Text>
-            </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image source={require('../../assets/store/heart.png')} style={styles.heart}/>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    Alert.alert(
+                        "해당 제품이 장바구니에 추가 되었습니다.",
+                        [{ text: "계속 쇼핑하기", style: "cancel" },
+                        { text: "구매하러 가기", onPress: () => { navigation.navigate('Order'); }}],
+                        { cancelable: false }
+                    );
+                    }}
+                >
+                    <Text style={styles.Button}>장바구니 담기</Text>
+                </TouchableOpacity>
             </View>
         </View>
 

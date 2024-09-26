@@ -68,19 +68,20 @@ const styles = StyleSheet.create({
     carouselImage: {
         width: width,
         height: 334,
-        marginVertical: '7%',
+        margin: 'auto',
+        marginHorizenal: 5,
         justifyContent: 'space-around',
     },
     arrowLeft: {
         position: 'absolute',
         left: 0,
-        top: '47%',
+        top: '45%',
         zIndex: 1,
     },
     arrowRight: {
         position: 'absolute',
         right: 0,
-        top: '47%',
+        top: '45%',
         zIndex: 1,
     },
     arrowImage: {
