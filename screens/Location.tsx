@@ -10,7 +10,7 @@ const LocationScreen = () => {
     const navigation = useNavigation();
 
     const handlePress = () => {
-        navigation.navigate('마이페이지');
+        navigation.navigate('Address');
     }
 
     return (

@@ -30,8 +30,8 @@ const GuideScreen = () => {
                             placeholderTextColor='#D2CFCF'
                         />
                     </View>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText} onPress={() => navigation.navigate('Home')}>로그인</Text>
+                    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+                        <Text style={styles.buttonText}>로그인</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
