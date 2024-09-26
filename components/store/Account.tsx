@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Account = ({ props }) => {
-    const navigation = useNavigation();
-
-    const handlePress = () => {
-        navigation.navigate('마이페이지');
-    }
-
+const Account = ({ name, number, buttons }) => {
     return (
         <View style={styles.cardContainer}>
             <View style={styles.card}>
                 <View style={{ flexDirection: 'row'}}>
                     <Text style={styles.cardTitle}>
-                        {props.name}님
+                        {name}님
                     </Text>
                     <View style={styles.detailSection}>
                         <Text style={styles.detailText}>
@@ -25,17 +17,17 @@ const Account = ({ props }) => {
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.cardText}>
-                        {props.number}
+                        {number}
                     </Text>
                     <View style={styles.btnContainer}>
-                        {buttons.map(( buttons, index ) => (
-                            <TouchableOpacity key={props.index} style={styles.btnSection} onPress={props.buttons.onPress}>
+                        {buttons.map((button, index) => (
+                            <TouchableOpacity key={index} style={styles.btnSection} onPress={button.onPress}>
                                 <Text style={styles.btnText}>
-                                    {buttons.text}
+                                    {button.text}
                                 </Text>
                             </TouchableOpacity>
-                            ))}
-                       </View>
+                        ))}
+                    </View>
                 </View>
             </View>
         </View>
@@ -52,12 +44,8 @@ const styles = StyleSheet.create({
     btnContainer: {
         flexDirection: 'row',
     },
-    addBtnContainer: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     btnSection: {
-        backgroundColor: 'fff',
+        backgroundColor: '#fff',
         borderRadius: 4,
         borderWidth: 1,
         width: 38,
@@ -75,7 +63,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         borderWidth: 0.8,
         borderColor: '#46A6FF',
-        AlignItem: 'center',
+        alignItems: 'center',
     },
     detailText: {
         fontWeight: 'bold',
@@ -98,48 +86,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         color: '#000',
-        marginBottom : 10,
+        marginBottom: 10,
     },
     cardText: {
         fontSize: 10,
         color: '#ADADAD',
-    },
-    cardText2: {
-        fontSize: 10,
-        color: '#000',
-        marginBottom: 15,
     },
     btnText: {
         fontSize: 10,
         textAlign: 'center',
         color: '#46A6FF',
     },
-    addBtnText: {
-        fontSize: 20,
-        color: '#fff',
-        color: '#46A6FF',
-    },
-    addressBtnText: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: '#fff',
-    },
-    addBtn: {
-        width: 30,
-        height: 30,
-        borderRadius: 50,
-        alignItems: 'center',
-        textAlign: 'center',
-        backgroundColor: '#DCF0FF',
-    },
-    addressBtn: {
-        width: 350,
-        height: 50,
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 45,
-    }
 });
 
 export default Account;

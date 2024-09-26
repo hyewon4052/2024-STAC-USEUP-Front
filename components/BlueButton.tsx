@@ -27,12 +27,15 @@ const styles = StyleSheet.create({
         margin: 'auto',
     },
     button: {
-        width: 350,
+        width: 320,
         height: 52,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 45,
+        paddingBottom: 5,
+        Bottom: 10,
+//         marginRight: 90`,
     },
     title: {
         fontSize: 24,

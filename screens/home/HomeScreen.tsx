@@ -27,7 +27,6 @@ const HomeScreen = () => {
             <ScrollView>
 
                 <HeaderLogo
-                    source={require('../../assets/home/bell.png')}
                     page='none'
                 />
 

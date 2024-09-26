@@ -15,7 +15,7 @@ const GuideScreen = () => {
                     <View style={styles.Wrap}>
                         <TextInput
                             style={styles.textInputContent}
-                            placeholder='이메일 작성하기'
+                            placeholder='아이디 입력'
                             maxLength={1000}
                             spellCheck={false}
                             placeholderTextColor='#D2CFCF'
@@ -24,7 +24,7 @@ const GuideScreen = () => {
                     <View style={styles.Wrap}>
                         <TextInput
                             style={styles.textInputContent}
-                            placeholder='비밀번호 작성하기'
+                            placeholder='비밀번호 입력'
                             maxLength={1000}
                             spellCheck={false}
                             placeholderTextColor='#D2CFCF'

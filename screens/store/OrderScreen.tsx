@@ -9,12 +9,6 @@ import Account from '../../components/store/Account'
 
 const { width } = Dimensions.get('window');
 
-const cards = [
-    {
-
-    },
-];
-
 const InquiryDetail = () => {
     const navigation = useNavigation();
     return (
@@ -46,18 +40,6 @@ const InquiryDetail = () => {
                 </View>
             </View>
             <View style={styles.Wrap}>
-                <Text style={styles.title}>결제수단</Text>
-                <Text>
-                     <Account
-                         key='1'
-                         name='OO'
-                         number='100********574'
-                         showCardText2={true}
-                         buttons={[
-                             { text: '수정', onPress: () => console.log('변경')},
-                         ]}
-                     />
-                </Text>
             </View>
             <View>
                 <Text style={styles.title}>결제금액</Text>

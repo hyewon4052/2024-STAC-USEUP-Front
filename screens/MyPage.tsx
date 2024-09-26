@@ -4,12 +4,12 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView 
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import MyListItem from '../components/MyListItem';
-import NCBag from '../components/Goods/NCBag'
-import Shirtist from '../components/Goods/Shirtist'
-import Jacket from '../components/Goods/Jacket'
-import Skirt from '../components/Goods/Skirt'
-import Dresses from '../components/Goods/Dresses'
-import EcoBag from '../components/Goods/EcoBag'
+import NCBagL from '../components/Goods/mylist/NCBagL'
+import ShirtistL from '../components/Goods/mylist/ShirtistL'
+import JacketL from '../components/Goods/mylist/JacketL'
+import SkirtL from '../components/Goods/mylist/SkirtL'
+import DressesL from '../components/Goods/mylist/DressesL'
+import EcoBagL from '../components/Goods/mylist/EcoBagL'
 
 const CollectSuccessScreen = () => {
 
@@ -93,15 +93,10 @@ const CollectSuccessScreen = () => {
                         </View>
                     </View>
                 </View>
+                <Text style={styles.myListText}>마이찜 목록</Text>
                 <View style={styles.myListContainer}>
-                    <Text style={styles.myListText}>마이찜 목록</Text>
-                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', margin: 'auto', paddingBottom: 30}}>
-                            <NCBag />
-                            <Shirtist />
-                            <Skirt />
-                            <EcoBag />
-                            <Jacket />
-                            <Dresses />
+                        <View style={styles.myListSection}>
+                            <NCBagL />
                         </View>
                 </View>
                 </ScrollView>
@@ -111,7 +106,13 @@ const CollectSuccessScreen = () => {
 };
 
 const styles = StyleSheet.create({
+//                             <ShirtistL />
+//                             <SkirtL />
+//                             <EcoBagL />
+//                             <JacketL />
+//                             <DressesL />
     container: {
+        display: 'grid',
         flex: 1,
         backgroundColor: '#fff',
         paddingHorizontal: 31,
@@ -160,9 +161,21 @@ const styles = StyleSheet.create({
         borderColor: '#EEEEEE',
         marginBottom: 50,
     },
+
     myListContainer: {
-        marginHorizontal: 15,
+        display: 'grid',
+        width: 300,
+//         padding: 25,
+        flex: 1,
+//         flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
     },
+    myListSection: {
+        flexDirection: 'row',
+//         flexWrap: 'wrap',
+    },
+
     accountSection: {
         elevation: 4,
     },
