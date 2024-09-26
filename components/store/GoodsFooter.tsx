@@ -6,25 +6,43 @@ import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
-const GoodsFooter = () => {
+const GoodsFooter = (props) => {
     const navigation = useNavigation();
-    const [tab, setTab] = useState(0);
+    const [heartStates, setHeartStates] = useState<{ [key: string]: boolean }>({});
+
+    const toggleHeart = (componentName: string) => {
+        setHeartStates(prevState => ({
+            ...prevState,
+            [componentName]: !prevState[componentName],
+        }));
+    };
+
 
     return (
         <View style={styles.container}>
             <View style={styles.footer}>
-                <TouchableOpacity>
-                    <Image source={require('../../assets/store/heart.png')} style={styles.heart}/>
+                <TouchableOpacity
+                    onPress={() => toggleHeart(props.displayName)} // 하트 눌렀을 때 상태 변경
+                >
+                    <Image
+                        source={heartStates[props.displayName]
+                            ? require('../../assets/store/heart-color.png') // 색 있는 하트
+                            : require('../../assets/store/heart.png') // 빈 하트
+                        }
+                        style={styles.heart}
+                    />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => {
                     Alert.alert(
-                        "해당 제품이 장바구니에 추가 되었습니다.",
-                        [{ text: "계속 쇼핑하기", style: "cancel" },
-                        { text: "구매하러 가기", onPress: () => { navigation.navigate('Order'); }}],
+                        "장바구니 추가",  // 제목
+                        "해당 제품이 장바구니에 추가되었습니다.",  // 내용
+                        [
+                            { text: "계속 쇼핑하기", style: "cancel" },
+                            { text: "구매하러 가기", onPress: () => navigation.navigate('Order') },
+                        ],
                         { cancelable: false }
                     );
-                    }}
-                >
+                }} >
                     <Text style={styles.Button}>장바구니 담기</Text>
                 </TouchableOpacity>
             </View>

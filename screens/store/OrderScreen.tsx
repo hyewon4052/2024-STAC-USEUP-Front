@@ -5,37 +5,21 @@ import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 import BlueButton from '../../components/BlueButton'
 import PlusButton from '../../components/PlusButton'
+import Account from '../../components/store/Account'
 
 const { width } = Dimensions.get('window');
 
 const cards = [
-        {
-            name: '유즈업',
-            phone: '010-1234-5678',
-            address1 : '서울시 강남구',
-            address2 : '유즈아파트 101동 401호',
-            showCardText2: true,
-            buttons: [
-                { text: '수정', onPress: () => console.log('수정 클릭')},
-                { text: '삭제', onPress: () => console.log('삭제 클릭')},
-            ],
-        },
-    ];
+    {
+
+    },
+];
 
 const InquiryDetail = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            {cards.map(( card, index) => (
-                    <DeliveryAddress
-                        key={index}
-                        name={card.name}
-                        phone={card.phone}
-                        address={card.address}
-                        showCardText2={card.showCardText2}
-                        buttons={card.buttons}
-                    />
-                ))}
+
             <View style={styles.Wrap}>
                 <Text style={styles.title}>배송지</Text>
                 <TextInput
@@ -63,7 +47,17 @@ const InquiryDetail = () => {
             </View>
             <View style={styles.Wrap}>
                 <Text style={styles.title}>결제수단</Text>
-                <Text style={styles.account}></Text>
+                <Text>
+                     <Account
+                         key='1'
+                         name='OO'
+                         number='100********574'
+                         showCardText2={true}
+                         buttons={[
+                             { text: '수정', onPress: () => console.log('변경')},
+                         ]}
+                     />
+                </Text>
             </View>
             <View>
                 <Text style={styles.title}>결제금액</Text>

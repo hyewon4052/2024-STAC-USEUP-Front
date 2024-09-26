@@ -1,10 +1,9 @@
-// AddressScreen.js
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
-const DeliveryAddressComponent = ({ name, number, address1, address2, showCardText2, buttons }) => {
+const Account = ({ props }) => {
     const navigation = useNavigation();
 
     const handlePress = () => {
@@ -16,27 +15,21 @@ const DeliveryAddressComponent = ({ name, number, address1, address2, showCardTe
             <View style={styles.card}>
                 <View style={{ flexDirection: 'row'}}>
                     <Text style={styles.cardTitle}>
-                        {name}님
+                        {props.name}님
                     </Text>
                     <View style={styles.detailSection}>
                         <Text style={styles.detailText}>
-                            기본배송지
+                            기본 결제수단
                         </Text>
                     </View>
                 </View>
                 <View style={styles.subContainer}>
                     <Text style={styles.cardText}>
-                        {number}
+                        {props.number}
                     </Text>
-                    { showCardText2 && (
-                        <Text style={styles.cardText2}>
-                            {address1} {'\n'}
-                            {address2}
-                        </Text>
-                    )}
                     <View style={styles.btnContainer}>
                         {buttons.map(( buttons, index ) => (
-                            <TouchableOpacity key={index} style={styles.btnSection} onPress={buttons.onPress}>
+                            <TouchableOpacity key={props.index} style={styles.btnSection} onPress={props.buttons.onPress}>
                                 <Text style={styles.btnText}>
                                     {buttons.text}
                                 </Text>
@@ -149,4 +142,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default DeliveryAddressComponent; // 내보내기 확인
+export default Account;
