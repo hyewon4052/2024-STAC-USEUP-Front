@@ -4,7 +4,8 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
-const DeliveryAddressComponent = ({ name, number, address1, address2, showCardText2, buttons }) => {
+const DeliveryAddressComponent = ({ name, number, address, showCardText2, buttons = [], }) => {
+
     const navigation = useNavigation();
 
     const handlePress = () => {
@@ -16,7 +17,7 @@ const DeliveryAddressComponent = ({ name, number, address1, address2, showCardTe
             <View style={styles.card}>
                 <View style={{ flexDirection: 'row'}}>
                     <Text style={styles.cardTitle}>
-                        {name}님
+                        {name}
                     </Text>
                     <View style={styles.detailSection}>
                         <Text style={styles.detailText}>
@@ -30,8 +31,7 @@ const DeliveryAddressComponent = ({ name, number, address1, address2, showCardTe
                     </Text>
                     { showCardText2 && (
                         <Text style={styles.cardText2}>
-                            {address1} {'\n'}
-                            {address2}
+                            {address}
                         </Text>
                     )}
                     <View style={styles.btnContainer}>
