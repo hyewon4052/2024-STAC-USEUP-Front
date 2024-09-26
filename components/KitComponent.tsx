@@ -1,17 +1,39 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Alert } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 const KitComponent = ({ title, date, iconSource, onPress }) => {
     const formattedTitle = title.length > 7 ? title.substring(0,7) + '...' : title;
 
-    const handlePress = () => {
-        if (iconSource === require('../assets/shopping3.png')) {
-            onPress(title, date, iconSource, onPress); // 수정된 부분
-        } else {
-            Alert.alert('알림', '이 아이콘은 이동할 수 없습니다.');
-        }
-    };
+    const navigation = useNavigation();
+
+        const handlePress = () => {
+            if (iconSource === require('../assets/shopping3.png')) {
+                navigation.navigate('Purchase',{
+                    title: title,
+                    date: date,
+                    iconSource: iconSource,
+                    onPress: onPress,
+                });
+            }
+            else if(iconSource === require('../assets/calendar3.png')) {
+                navigation.navigate('Apply',{
+                    title: title,
+                    date: date,
+                    iconSource: iconSource,
+                    onPress: onPress,
+                });
+            }
+            else if(iconSource === require('../assets/check2.png')) {
+                navigation.navigate('Success',{
+                    title: title,
+                    date: date,
+                    iconSource: iconSource,
+                    onPress: onPress,
+                });
+            }
+        };
 
     return (
         <View style={styles.card}>

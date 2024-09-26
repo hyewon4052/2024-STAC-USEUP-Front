@@ -19,6 +19,11 @@ import Collect from './screens/Collect';
 import CollectApply from './screens/CollectApply';
 import CollectApplying from './screens/CollectApplying';
 import CollectSuccess from './screens/CollectSuccess';
+import Purchase from './screens/Purchase';
+import Apply from './screens/Apply';
+import Success from './screens/Success';
+import PurchaseSuccess from './screens/PurchaseSuccess';
+import AllActivity from './screens/AllActivity';
 /* 스토어 탭 */
 import StoreScreen from './screens/store/StoreScreen';
 import BasketScreen from './screens/store/BasketScreen';
@@ -36,11 +41,11 @@ import DressesScreen from './screens/goods/DressesScreen';
 import MyPage from './screens/MyPage';
 import AccountInformation from './screens/AccountInformation';
 import Address from './screens/Address';
+import Location from './screens/Location';
 import Manage from './screens/Manage';
+import MoneyManage from  './screens/MoneyManage';
 import Ask from './screens/Ask';
 import Account from './screens/Account';
-import AllActivity from './screens/AllActivity';
-import Location from './screens/Location';
 
 import { RootStackParamList } from './types';
 
@@ -195,6 +200,67 @@ export default function App() {
                             headerShown: true,
                             headerTitleAlign: 'center',
                             title: '수거 완료',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="Apply" // 변경된 부분
+                        component={Apply} // 변경된 부분
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '수거신청',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                                  backgroundColor: '#fff',
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="Success" // 변경된 부분
+                        component={Success} // 변경된 부분
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '수거완료',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="Purchase"
+                        component={Purchase} //
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '구매상품',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="PurchaseSuccess"
+                        component={PurchaseSuccess} //
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '구매완료',
                             headerStyle: {
                                   elevation: 4, // Android 그림자 높이
                                   shadowColor: '#000', // iOS 그림자 색상
@@ -364,6 +430,21 @@ export default function App() {
                     <Stack.Screen
                         name="Manage"
                         component={Manage} //
+                        options={{
+                            headerShown: true,
+                            headerTitleAlign: 'center',
+                            title: '계좌 관리',
+                            headerStyle: {
+                                  elevation: 4, // Android 그림자 높이
+                                  shadowColor: '#000', // iOS 그림자 색상
+                                  shadowOpacity: 0.25, // iOS 그림자 투명도
+                                  shadowOffset: { width: 0, height: 2 }, // iOS 그림자 오프셋
+                                  shadowRadius: 4, // iOS 그림자 반경
+                            },                        }}
+                    />
+                    <Stack.Screen
+                        name="MoneyManage"
+                        component={MoneyManage} //
                         options={{
                             headerShown: true,
                             headerTitleAlign: 'center',

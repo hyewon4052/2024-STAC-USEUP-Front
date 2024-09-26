@@ -1,6 +1,6 @@
 // CollectApplyingScreen.js
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
@@ -13,7 +13,7 @@ const AskScreen = ({ item }) => {
     const navigation = useNavigation();
 
     const handlePress = () => {
-        navigation.navigate('CollectSuccess');
+        Alert.alert('개발 준비 중입니다.');
     }
 
     const renderItem = ({ item }) => (

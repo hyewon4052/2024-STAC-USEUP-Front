@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import DeliveryAddress from '../components/DeliveryAddress';
+import BlueButton from '../components/BlueButton';
 
 const AddressScreen = () => {
     const navigation = useNavigation();
@@ -18,13 +19,12 @@ const AddressScreen = () => {
     const cards = [
         {
             name: '유즈업',
-            phone: '010-1234-5678',
-            address1 : '서울시 강남구',
-            address2 : '유즈아파트 101동 401호',
+            number: '010-1234-5678',
+            address : '서울시 강남구 유즈아파트 101동 401호',
             showCardText2: true,
             buttons: [
-                { text: '수정', onPress: () => console.log('수정 클릭')},
-                { text: '삭제', onPress: () => console.log('삭제 클릭')},
+                { text: '수정'},
+                { text: '삭제'},
             ],
         },
     ];
@@ -34,7 +34,7 @@ const AddressScreen = () => {
                 <DeliveryAddress
                     key={index}
                     name={card.name}
-                    phone={card.phone}
+                    number={card.number}
                     address={card.address}
                     showCardText2={card.showCardText2}
                     buttons={card.buttons}

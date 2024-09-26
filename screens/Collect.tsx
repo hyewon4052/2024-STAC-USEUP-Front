@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
 import CollectTabView from '../components/collect-tab-view';
 import LinearGradient from 'react-native-linear-gradient';
@@ -24,13 +24,15 @@ const GradientFloatingButton = ({ onPress }) => {
 
 const CollectScreen = () => {
   const navigation = useNavigation();
+  const [selectedIcon, setSelectedIcon] = useState(null);
 
   const handlePress = () => {
     navigation.navigate('CollectApplying');
   }
 
   const handlePurchase = () => {
-    navigation.navigate('Purchase');
+    setSelectedIcon();
+    navigation.navigate('PurchaseSuccess');
   }
 
   const handleActivity = () => {
@@ -44,7 +46,7 @@ const CollectScreen = () => {
         <Text style={styles.buttonText}>모든 활동 보기</Text>
       </TouchableOpacity>
       <View style={styles.label}>
-          <TouchableOpacity onPress={handleActivity}>
+          <TouchableOpacity onPress={handlePurchase}>
               <View style={{ alignItems: 'center' }}>
                   <Image source={require('../assets/calendar2.png')} style={styles.imageIcon}></Image>
                   <Text style={styles.imageText}>수거신청</Text>
@@ -53,7 +55,7 @@ const CollectScreen = () => {
 
           <View style={styles.separator} />
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handlePurchase}>
               <View style={{ alignItems: 'center' }}>
                   <Image source={require('../assets/check3.png')} style={styles.imageIcon}></Image>
                   <Text style={styles.imageText}>수거완료</Text>
