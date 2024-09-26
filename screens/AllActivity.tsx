@@ -6,13 +6,10 @@ import { useNavigation } from '@react-navigation/native';
 import ActivityHistory from '../components/ActivityHistory';
 import PurchaseComponent from '../components/PurchaseComponent';
 
-// 화면 높이 가져오기
-const { height } = Dimensions.get('window');
-
 const AllActivityScreen = () => {
     const purchaseData = [
         {
-           title: "NC 다이노스 유니폼 백팩", // 여기서 title을 정의
+           title: "NC 다이노스 ..", // 여기서 title을 정의
            date : "08/22", // 여기서 date를 정의
            iconSource : require('../assets/shopping2.png'),
         },
@@ -39,11 +36,6 @@ const AllActivityScreen = () => {
         {
            title: "03 키트", // 여기서 title을 정의
            date : "07/13", // 여기서 date를 정의
-           iconSource : require('../assets/check3.png'),
-        },
-        {
-           title: "04 키트", // 여기서 title을 정의
-           date : "08/23", // 여기서 date를 정의
            iconSource : require('../assets/check3.png'),
         },
     ];

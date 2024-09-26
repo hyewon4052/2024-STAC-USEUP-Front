@@ -15,7 +15,7 @@ const ActivityHistoryComponent = () => {
             navigation.navigate('AllActivity');
         }
         const handlePurchase = () => {
-            navigation.navigation('Purchase');
+            navigation.navigate('Purchase');
         }
         const handlePress = () => {
             navigation.navigate('CollectApplying');
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        paddingTop: 25,
         paddingHorizontal: 25,
     },
     titleText: {

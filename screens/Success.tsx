@@ -5,7 +5,7 @@ import PurchaseComponent from '../components/PurchaseComponent';
 import KitComponent from '../components/KitComponent';
 import FullComponent from '../components/FullComponent';
 
-const PurchaseScreen = ({ route }) => {
+const SuccessScreen = ({ route }) => {
     const { title, date, iconSource, onPress } = route.params;
     const navigation = useNavigation();
 
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default PurchaseScreen;
+export default SuccessScreen;
