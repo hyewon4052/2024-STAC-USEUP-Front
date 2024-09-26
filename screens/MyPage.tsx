@@ -4,6 +4,12 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ScrollView 
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import MyListItem from '../components/MyListItem';
+import NCBag from '../components/Goods/NCBag'
+import Shirtist from '../components/Goods/Shirtist'
+import Jacket from '../components/Goods/Jacket'
+import Skirt from '../components/Goods/Skirt'
+import Dresses from '../components/Goods/Dresses'
+import EcoBag from '../components/Goods/EcoBag'
 
 const CollectSuccessScreen = () => {
 
@@ -89,61 +95,13 @@ const CollectSuccessScreen = () => {
                 </View>
                 <View style={styles.myListContainer}>
                     <Text style={styles.myListText}>마이찜 목록</Text>
-                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingBottom: 30}}>
-                            <MyListItem
-                                imageSource={require('../assets/store/NCdinosBag/NCdinos-bag.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='NCBag'
-                                width={66}
-                                height={90}
-                            />
-                            <MyListItem
-                                imageSource={require('../assets/store/shirtist/shirtist.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='Shirtist'
-                                width={83}
-                                height={83}
-                            />
-                            <MyListItem
-                                imageSource={require('../assets/store/jaket/jaket.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='Jacket'
-                                width={87}
-                                height={81}
-                            />
-                            <MyListItem
-                                imageSource={require('../assets/store/skirt/skirt.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='Skirt'
-                                width={78}
-                                height={78}
-                            />
-                            <MyListItem
-                                imageSource={require('../assets/store/dress/dresses.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='Bresses'
-                                width={90}
-                                height={70}
-                            />
-                            <MyListItem
-                                imageSource={require('../assets/store/ecoBag/ecobag.png')}
-                                title="SHIRTIST"
-                                price="00,000 원"
-                                productName="제품명"
-                                page='EcoBag'
-                                width={93}
-                                height={94}
-                            />
+                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', margin: 'auto', paddingBottom: 30}}>
+                            <NCBag />
+                            <Shirtist />
+                            <Skirt />
+                            <EcoBag />
+                            <Jacket />
+                            <Dresses />
                         </View>
                 </View>
                 </ScrollView>
