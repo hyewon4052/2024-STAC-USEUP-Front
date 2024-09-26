@@ -5,7 +5,7 @@ import PurchaseComponent from '../components/PurchaseComponent';
 import KitComponent from '../components/KitComponent';
 import FullComponent from '../components/FullComponent';
 
-const PurchaseScreen = ({ route }) => {
+const ApplyScreen = ({ route }) => {
     const { title, date, iconSource, onPress } = route.params;
     const navigation = useNavigation();
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         height: 273,
         borderRadius: 4.46,
         paddingTop: 10,
-        backgroundColor: '#F0F0F0',
+//         backgroundColor: '#F0F0F0',
         alignItems: 'center',
         marginHorizontal: 25,
     },
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default PurchaseScreen;
+export default ApplyScreen;

@@ -1,4 +1,3 @@
-// AddressScreen.js
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -6,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import DeliveryAddress from '../components/DeliveryAddress';
 import BlueButton from '../components/BlueButton';
 
-const LocationScreen = () => {
+const MoneyManageScreen = () => {
     const navigation = useNavigation();
 
     const handlePress = () => {
@@ -16,17 +15,13 @@ const LocationScreen = () => {
     return (
         <View style={styles.cardContainer}>
             <Text style={styles.subText}>
-                전화번호 (-) 추가
+                은행명
             </Text>
-            <TextInput style={styles.TextInput} placeholder= '010-1234-5678'></TextInput>
+            <TextInput style={styles.TextInput} placeholder= 'ex) 우리은랭, 카카오뱅크...'></TextInput>
             <Text style={styles.subText}>
-                위치
+                계좌번호 (12자)
             </Text>
-            <TextInput style={styles.TextInput} placeholder= '서울시 강남구'></TextInput>
-            <Text style={styles.subText}>
-                상세주소
-            </Text>
-            <TextInput style={styles.TextInput} placeholder= '유즈아파트 401호'></TextInput>
+            <TextInput style={styles.TextInput} placeholder= '123412341234'></TextInput>
             <TouchableOpacity style={styles.addressBtnContainer} onPress={handlePress}>
                 <LinearGradient
                     colors={['#36B7FF', '#5883FF']}
@@ -57,7 +52,7 @@ const styles = StyleSheet.create({
         marginBottom: 25,
     },
     addressBtnContainer: {
-        marginTop: 400,
+        marginTop: 475,
     },
     addressBtn: {
         width: 350,
@@ -74,4 +69,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default LocationScreen; // 내보내기 확인
+export default MoneyManageScreen; // 내보내기 확인
