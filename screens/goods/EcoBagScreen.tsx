@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     Images: {
-        width: '100%',
+        width: 300,
         height: 334,
+        margin: 'auto',
         marginVertical: 60,
     },
 });

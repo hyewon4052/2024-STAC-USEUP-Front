@@ -95,7 +95,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='NCBag'
                                 width={66}
                                 height={90}
                             />
@@ -104,7 +104,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='Shirtist'
                                 width={83}
                                 height={83}
                             />
@@ -113,7 +113,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='Jacket'
                                 width={87}
                                 height={81}
                             />
@@ -122,7 +122,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='Skirt'
                                 width={78}
                                 height={78}
                             />
@@ -131,7 +131,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='Bresses'
                                 width={90}
                                 height={70}
                             />
@@ -140,7 +140,7 @@ const CollectSuccessScreen = () => {
                                 title="SHIRTIST"
                                 price="00,000 원"
                                 productName="제품명"
-                                page=' '
+                                page='EcoBag'
                                 width={93}
                                 height={94}
                             />

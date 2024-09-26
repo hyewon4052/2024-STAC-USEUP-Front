@@ -61,6 +61,7 @@ const BasketScreen = () => {
             </View>
             <BlueButton
                 name='구매 하기'
+                page='Order'
             />
         </View>
     );

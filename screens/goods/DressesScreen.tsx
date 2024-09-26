@@ -59,20 +59,10 @@ const styles = StyleSheet.create({
     Wrap: {
         marginBottom: 85,
     },
-    carousel: {
-        width: width,
-        backgroundColor: '#F0F0F0',
-        height: 398,
-    },
-    carouselImage: {
-        width: width,
-        height: 334,
-        marginVertical: '7%',
-        justifyContent: 'space-around',
-    },
     Images: {
-        width: '100%',
+        width: 300,
         height: 334,
+        margin: 'auto',
         marginVertical: 60,
     },
 });

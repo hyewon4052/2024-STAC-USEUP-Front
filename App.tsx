@@ -29,7 +29,7 @@ import PaymentScreen from './screens/store/PaymentScreen';
 import NCdinosbagScreen from './screens/goods/NCdinosbagScreen';
 import ShirtistScreen from './screens/goods/ShirtistScreen';
 import SkirtScreen from './screens/goods/SkirtScreen';
-import JaketScreen from './screens/goods/JaketScreen';
+import JacketScreen from './screens/goods/JacketScreen';
 import EcoBagScreen from './screens/goods/EcoBagScreen';
 import DressesScreen from './screens/goods/DressesScreen';
 /* 마이페이지 탭 */
@@ -254,8 +254,8 @@ export default function App() {
                         }}
                     />
                     <Stack.Screen
-                        name="Jaket"
-                        component={JaketScreen}
+                        name="Jacket"
+                        component={JacketScreen}
                         options={{
                             headerTitle: '',
                             headerStyle: {
