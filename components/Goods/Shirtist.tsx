@@ -13,7 +13,7 @@ const Shirtist = () => {
             title='BEAR MAN'
             name='NC다이노스 유니폼 백팩'
             price='00,000'
-            page='NCBag'
+            page='Shirtist'
         />
     );
 };

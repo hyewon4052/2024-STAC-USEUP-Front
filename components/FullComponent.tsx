@@ -123,7 +123,9 @@ const styles = StyleSheet.create({
     },
     nextContainer: {
         marginTop: 10,
-        padding: 10,
+//         padding: 10,
+//     margin: 'auto'
+    justifyContent: 'center',
     },
     icon: {
         width: 80,

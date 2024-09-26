@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     arrowLeft: {
         position: 'absolute',
         left: 10,
-        top: '45%',
+        top: '40%',
         zIndex: 1,
     },
     arrowRight: {

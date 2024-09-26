@@ -45,7 +45,8 @@ const NCdinosbag = () => {
                 >
                 </TabScreen>
             </ScrollView>
-            <GoodsFooter />
+            <GoodsFooter
+                displayName='NCBag'/>
         </View>
 
     );

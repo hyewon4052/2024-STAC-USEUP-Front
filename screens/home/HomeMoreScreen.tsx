@@ -9,8 +9,8 @@ const { width } = Dimensions.get('window');
 
 const issueItems = [
     { id: '1', image: require('../../assets/home/trash.png'), page: 'IssueBlue' },
-    { id: '2', image: require('../../assets/home/consumption.png'), page: 'IssueRed' },
-    { id: '3', image: require('../../assets/home/clothes.png'), page: 'IssueYellow' },
+    { id: '2', image: require('../../assets/home/consumption.png'), page: 'IssueYellow' },
+    { id: '3', image: require('../../assets/home/clothes.png'), page: 'IssueRed' },
 ]
 
 const HomeMoreScreen = () => {
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
         display: 'grid',
         flex: 1,
         padding: 20,
-        paddingHorizontal: 50,
-        paddingLeft: 55,
+//         paddingHorizontal: 50,
+    margin: 'auto',
         backgroundColor: 'white',
         justifyItem: 'space-around',
     },
