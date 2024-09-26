@@ -46,13 +46,13 @@ const GoodsCarousel = ({ images }) => {
 
             {currentIndex > 0 && (
                 <TouchableOpacity style={styles.arrowLeft} onPress={goToPrevious}>
-                    <Image source={require('../../assets/arrow-L-W.png')} style={styles.arrowImage} />
+                    <Image source={require('../../assets/arrow-L-B.png')} style={styles.arrowImage} />
                 </TouchableOpacity>
             )}
 
             {currentIndex < images.length - 1 && (
                 <TouchableOpacity style={styles.arrowRight} onPress={goToNext}>
-                   <Image source={require('../../assets/arrow-R-W.png')} style={styles.arrowImage} />
+                   <Image source={require('../../assets/arrow-R-B.png')} style={styles.arrowImage} />
                 </TouchableOpacity>
             )}
         </View>
@@ -68,19 +68,20 @@ const styles = StyleSheet.create({
     carouselImage: {
         width: width,
         height: 334,
-        marginVertical: '7%',
+        margin: 'auto',
+        marginHorizenal: 5,
         justifyContent: 'space-around',
     },
     arrowLeft: {
         position: 'absolute',
         left: 0,
-        top: '50%',
+        top: '45%',
         zIndex: 1,
     },
     arrowRight: {
         position: 'absolute',
         right: 0,
-        top: '50%',
+        top: '45%',
         zIndex: 1,
     },
     arrowImage: {

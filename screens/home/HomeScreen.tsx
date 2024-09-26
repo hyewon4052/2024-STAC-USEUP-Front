@@ -27,7 +27,6 @@ const HomeScreen = () => {
             <ScrollView>
 
                 <HeaderLogo
-                    source={require('../../assets/home/bell.png')}
                     page='none'
                 />
 
@@ -39,7 +38,7 @@ const HomeScreen = () => {
                     <View style={styles.issueHeader}>
                         <Text style={styles.issueText}>환경이슈</Text>
                         <TouchableOpacity onPress={() => navigation.navigate('HomeMore')}>
-                            <Text style={styles.more}>더보기 ></Text>
+                            <Text style={styles.more}>더보기</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.issueImages}>
@@ -55,6 +54,7 @@ const HomeScreen = () => {
                                     </View>
                                 </TouchableOpacity>
                             )}
+                            showsVerticalScrollIndicator={false}
                         />
                     </View>
                 </View>

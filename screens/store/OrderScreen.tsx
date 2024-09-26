@@ -5,14 +5,15 @@ import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 import BlueButton from '../../components/BlueButton'
 import PlusButton from '../../components/PlusButton'
+import Account from '../../components/store/Account'
 
 const { width } = Dimensions.get('window');
-
 
 const InquiryDetail = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
+
             <View style={styles.Wrap}>
                 <Text style={styles.title}>배송지</Text>
                 <TextInput
@@ -39,8 +40,6 @@ const InquiryDetail = () => {
                 </View>
             </View>
             <View style={styles.Wrap}>
-                <Text style={styles.title}>결제수단</Text>
-                <Text style={styles.account}></Text>
             </View>
             <View>
                 <Text style={styles.title}>결제금액</Text>

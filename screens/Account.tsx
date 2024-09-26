@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
 //         flexDirection: ''
         backgroundColor: '#fff',
-        margin: 35,
+        padding: 35,
     },
     btnContainer: {
         flexDirection: 'row',

@@ -8,9 +8,9 @@ import Issue from '../../components/Issue'
 const { width } = Dimensions.get('window');
 
 const issueItems = [
-    { id: '1', image: require('../../assets/home/trash.png'), page: 'issueBlue' },
-    { id: '2', image: require('../../assets/home/trash.png'), page: 'issueRed' },
-    { id: '3', image: require('../../assets/home/trash.png'), page: 'issueYellow' },
+    { id: '1', image: require('../../assets/home/trash.png'), page: 'IssueBlue' },
+    { id: '2', image: require('../../assets/home/consumption.png'), page: 'IssueYellow' },
+    { id: '3', image: require('../../assets/home/clothes.png'), page: 'IssueRed' },
 ]
 
 const HomeMoreScreen = () => {
@@ -22,8 +22,8 @@ const HomeMoreScreen = () => {
                     const IssueComponent = item.issueComponent;
                     return (
                         <TouchableOpacity key={item.id} onPress={() => navigation.navigate(item.page)}>
-                            <View style={styles.issueImage}>
-                                <item.issueComponent />
+                            <View>
+                                <Image source={item.image} style={styles.issueImage} />
                             </View>
                         </TouchableOpacity>
                     );
@@ -38,23 +38,20 @@ const styles = StyleSheet.create({
         display: 'grid',
         flex: 1,
         padding: 20,
+//         paddingHorizontal: 50,
+    margin: 'auto',
         backgroundColor: 'white',
-        alignItem: 'center',
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 10,
+        justifyItem: 'space-around',
     },
     issueImages: {
-        flexDirection: 'row',
-        marginTop: '6%',
         flexDirection: 'row',
         flexWrap: 'wrap',
     },
     issueImage: {
-        marginRight: '4.5%',
+        marginHorizontal: '2%',
         marginBottom: '10%',
+        width: 140,
+        height: 170,
     },
 });
 

@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import DeliveryAddress from '../components/DeliveryAddress';
+import BlueButton from '../components/BlueButton';
 
 const AddressScreen = () => {
     const navigation = useNavigation();
@@ -11,12 +12,36 @@ const AddressScreen = () => {
     const handlePress = () => {
         navigation.navigate('마이페이지');
     }
+    const handleAdd = () => {
+        navigation.navigate('Location');
+    }
 
+    const cards = [
+        {
+            name: '유즈업',
+            number: '010-1234-5678',
+            address : '서울시 강남구 유즈아파트 101동 401호',
+            showCardText2: true,
+            buttons: [
+                { text: '수정'},
+                { text: '삭제'},
+            ],
+        },
+    ];
     return (
         <View style={styles.cardContainer}>
-            <DeliveryAddress/>
+            {cards.map(( card, index) => (
+                <DeliveryAddress
+                    key={index}
+                    name={card.name}
+                    number={card.number}
+                    address={card.address}
+                    showCardText2={card.showCardText2}
+                    buttons={card.buttons}
+                />
+            ))}
             <View style={styles.addBtnContainer}>
-                <TouchableOpacity style={styles.addBtn}>
+                <TouchableOpacity style={styles.addBtn} onPress={handleAdd}>
                     <Text style={styles.addBtnText}>+</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.addressBtnContainer} onPress={handlePress}>

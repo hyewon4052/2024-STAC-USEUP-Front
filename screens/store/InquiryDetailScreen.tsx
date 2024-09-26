@@ -11,6 +11,7 @@ const { width } = Dimensions.get('window');
 
 const InquiryDetail = () => {
     const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <View style={styles.Wrap}>
@@ -49,10 +50,14 @@ const InquiryDetail = () => {
             <View>
                 <Text style={styles.title}>사진 (선택, 최대 3장)</Text>
                 <Text style={styles.content}>사진을 업로드해주세요.</Text>
+                <TouchableOpacity>
+                    <Image style={styles.picture} source={require('../../assets/store/picture.png')}/>
+                </TouchableOpacity>
             </View>
 
             <BlueButton
                 name='작성 완료'
+                page='Ask'
             />
 
         </View>
@@ -72,7 +77,6 @@ const styles = StyleSheet.create({
     },
     plus: {
         flexDirection: 'row',
-//         justifyContent: '',
     },
     title: {
         fontSize: 20,
@@ -102,6 +106,11 @@ const styles = StyleSheet.create({
         height: 148,
         paddingLeft: 10,
         paddingBottom: 120,
+    },
+    picture: {
+        marginTop: 8,
+        width: 100,
+        height: 100,
     },
 });
 

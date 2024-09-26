@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         padding: 30,
         borderRadius: 10,
-        color: '#898A8D',
+        color: '#FFF',
     },
     manageContainer: {
         marginBottom: 24,

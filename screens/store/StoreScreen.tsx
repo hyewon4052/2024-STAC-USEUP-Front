@@ -5,7 +5,12 @@ import { RootStackParamList } from '../../types';
 import { useNavigation } from '@react-navigation/native';
 import HeaderLogo from '../../components/HeaderLogo'
 import Carousel from '../../components/Carousel'
-import NCBag from '../../components/store/NCBag'
+import NCBag from '../../components/Goods/NCBag'
+import Shirtist from '../../components/Goods/Shirtist'
+import Jacket from '../../components/Goods/Jacket'
+import Skirt from '../../components/Goods/Skirt'
+import Dresses from '../../components/Goods/Dresses'
+import EcoBag from '../../components/Goods/EcoBag'
 
 const { width } = Dimensions.get('window');
 
@@ -19,26 +24,28 @@ const categoryImages = {
 
 const posts = {
     신상품: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원', page: 'NCBag' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '3', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '4', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '1', components: NCBag },
+      { id: '2', components: Shirtist },
+      { id: '3', components: Jacket},
+      { id: '4', components: Skirt},
+      { id: '5', components: Dresses},
+      { id: '6', components: EcoBag},
     ],
     Hot: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '1', components: Dresses},
+      { id: '2', components: EcoBag},
     ],
     Top: [
-      { id: '1', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
+      { id: '1', components: Dresses},
+      { id: '2', components: Jacket},
     ],
     Bottom: [
-      { id: '1', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
+      { id: '1', components: Skirt},
+      { id: '2', components: Shirtist},
     ],
     Bag: [
-      { id: '1', image: require('../../assets/store/shirtist.png'), title: 'SHIRTIST', name: '바지', price: '00,000 원' },
-      { id: '2', image: require('../../assets/store/NCdinos-bag.png'), title: 'BEAR MAN', name: 'NC다이노스 유니폼 백팩', price: '00,000 원' },
+      { id: '1', components: NCBag},
+      { id: '2', components: EcoBag},
     ],
 };
 
@@ -47,10 +54,10 @@ const StoreScreen = () => {
     const [selectedCategory, setSelectedCategory] = useState<string>('신상품');
     const [heartStates, setHeartStates] = useState<{ [key: string]: boolean }>({});
 
-    const toggleHeart = (id: string) => {
+    const toggleHeart = (componentName: string) => {
         setHeartStates(prevState => ({
             ...prevState,
-            [id]: !prevState[id],
+            [componentName]: !prevState[componentName],
         }));
     };
 
@@ -107,25 +114,22 @@ const StoreScreen = () => {
                     <View style={styles.goodsContainer}>
                         <ScrollView contentContainerStyle={styles.goods}>
                             {posts[selectedCategory].map((item) => (
-                                <View key={item.id}>
+                                <View key={item.components.displayName}>
                                     <TouchableOpacity
                                         style={styles.heart}
-                                        onPress={() => toggleHeart(item.id)} // 하트 눌렀을 때 상태 변경
+                                        onPress={() => toggleHeart(item.components.displayName)} // 하트 눌렀을 때 상태 변경
                                     >
                                         <Image
-                                            source={heartStates[item.id]
+                                            source={heartStates[item.components.displayName]
                                                 ? require('../../assets/store/heart-color.png') // 색 있는 하트
                                                 : require('../../assets/store/heart.png') // 빈 하트
                                             }
                                             style={styles.heartImage}
                                         />
-                                </TouchableOpacity>
+                                    </TouchableOpacity>
 
-                                    <TouchableOpacity onPress={() => navigation.navigate(item.page)}>
-                                        <Image style={styles.goodsImage} source={item.image} />
-                                        <Text style={styles.goodsText}>{item.title}</Text>
-                                        <Text style={styles.goodsText}>{item.name}</Text>
-                                        <Text style={styles.price}>{item.price}</Text>
+                                    <TouchableOpacity>
+                                        <item.components />
                                     </TouchableOpacity>
                                 </View>
                             ))}
